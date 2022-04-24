@@ -38,6 +38,7 @@ public class RchDth implements Serializable {
 	private String userid;
 	private String dthnumber;
 	private String operator;
+	private String category;// dth
 	private double rchAmount;
 	private double walletAmount;
 	private double walletBalance;
@@ -222,6 +223,14 @@ public class RchDth implements Serializable {
 
 	public void setCouponBenefit(String couponBenefit) {
 		this.couponBenefit = couponBenefit;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 }

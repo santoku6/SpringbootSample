@@ -38,6 +38,7 @@ public class RchPostpaid implements Serializable {
 	private String userid;
 	private String mobile;
 	private String operator;
+	private String category;// mobile
 	private String circle;
 	private double billAmount;
 	private double walletAmount;
@@ -231,6 +232,14 @@ public class RchPostpaid implements Serializable {
 
 	public void setCouponBenefit(String couponBenefit) {
 		this.couponBenefit = couponBenefit;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 }

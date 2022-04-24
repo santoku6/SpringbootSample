@@ -35,6 +35,7 @@ import com.raxn.service.UserProfileService;
 import com.raxn.util.service.AppConstant;
 import com.raxn.util.service.CommonServiceUtil;
 import com.raxn.util.service.EmailMobileValidator;
+import com.raxn.util.service.GatherTransactionHistory;
 import com.raxn.util.service.SMSSenderService;
 
 import lombok.RequiredArgsConstructor;
@@ -60,7 +61,7 @@ public class UserProfileServiceImpl implements UserProfileService {
 
 	@Autowired
 	RchMobileRepository rchMobileRepo;
-	
+
 	@Autowired
 	RchDthRepository rchDthRepo;
 
@@ -429,28 +430,27 @@ public class UserProfileServiceImpl implements UserProfileService {
 		LOGGER.info("Today date is " + todayDate);
 		Date dateBefore30Days = java.sql.Date.valueOf(java.time.LocalDate.now().minusDays(30));
 		LOGGER.info("dateBefore30Days=" + dateBefore30Days);
-		
-		if(category.equalsIgnoreCase("recharge")) {
+
+		if (category.equalsIgnoreCase("recharge")) {
 			rechMobileHistory = rchMobileRepo.findByDateTime(userid, dateBefore30Days, todayDate);
 			rechDthHistory = rchDthRepo.findByDateTime(userid, dateBefore30Days, todayDate);
-			//TODO for fastag
-			
+			// TODO for fastag
+
 		}
 
-		
-
-		List<TransHistoryResponse> displayHistory = new ArrayList<TransHistoryResponse>();
-		for (RchMobile indRech : rechMobileHistory) {
-			transResponse.setAmount(indRech.getRchAmount());
-			transResponse.setCategory(indRech.getCategory());
-			transResponse.setDatetime(indRech.getDateTime());
-			transResponse.setMobile(indRech.getMobile());
-			transResponse.setOperator(indRech.getOperator());
-			transResponse.setOrderid(indRech.getOrderid());
-			transResponse.setUserid(indRech.getUserid());
-
-			displayHistory.add(transResponse);
-		}
+		List<TransHistoryResponse> displayHistory = GatherTransactionHistory.listRechargeHistory(rechMobileHistory, rechDthHistory);
+		/*
+		 * for (RchMobile indRech : rechMobileHistory) {
+		 * transResponse.setAmount(indRech.getRchAmount());
+		 * transResponse.setCategory(indRech.getCategory());
+		 * transResponse.setDatetime(indRech.getDateTime());
+		 * transResponse.setMobile(indRech.getMobile());
+		 * transResponse.setOperator(indRech.getOperator());
+		 * transResponse.setOrderid(indRech.getOrderid());
+		 * transResponse.setUserid(indRech.getUserid());
+		 * 
+		 * displayHistory.add(transResponse); }
+		 */
 		LOGGER.info("displayHistory size = " + displayHistory.size());
 
 		if (displayHistory.size() == 0) {

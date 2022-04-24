@@ -39,6 +39,7 @@ public class RchElectricity implements Serializable {
 	private String consumerid;
 	private String consumerName;
 	private String state;
+	private String category;// electricity
 	private String electricityOperator;
 	private Date dueDate;
 	private double billAmount;
@@ -249,6 +250,14 @@ public class RchElectricity implements Serializable {
 
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 }

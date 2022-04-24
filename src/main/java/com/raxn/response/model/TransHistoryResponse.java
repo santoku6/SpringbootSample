@@ -9,7 +9,7 @@ public class TransHistoryResponse {
 	private String orderid;
 	private String operator;
 	private String mobile;
-	private int amount;
+	private double amount;
 	private Date datetime;
 
 	public String getUserid() {
@@ -52,11 +52,11 @@ public class TransHistoryResponse {
 		this.mobile = mobile;
 	}
 
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 
