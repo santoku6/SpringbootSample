@@ -1,0 +1,52 @@
+{"properties": [
+  {
+    "name": "bulksms.url",
+    "type": "java.lang.String",
+    "description": "A description for 'bulksms.url'"
+  },
+  {
+    "name": "nationalsms.url",
+    "type": "java.lang.String",
+    "description": "A description for 'nationalsms.url'"
+  },
+  {
+    "name": "bulksms.key",
+    "type": "java.lang.String",
+    "description": "A description for 'bulksms.key'"
+  },
+  {
+    "name": "nationalsms.key",
+    "type": "java.lang.String",
+    "description": "A description for 'nationalsms.key'"
+  },
+  {
+    "name": "nationalsms.username",
+    "type": "java.lang.String",
+    "description": "A description for 'nationalsms.username'"
+  },
+  {
+    "name": "sms.senderid",
+    "type": "java.lang.String",
+    "description": "A description for 'sms.senderid'"
+  },
+  {
+    "name": "sms.validity.minutes",
+    "type": "java.lang.String",
+    "description": "A description for 'sms.validity.minutes'"
+  },
+  {
+    "name": "send.sms.service",
+    "type": "java.lang.String",
+    "description": "A description for 'send.sms.service'"
+  },
+  {
+    "name": "send.email.service",
+    "type": "java.lang.String",
+    "description": "A description for 'send.email.service'"
+  },
+  {
+    "name": "app.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'app.secret'"
+  }
+]}
