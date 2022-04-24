@@ -3,7 +3,7 @@ package com.raxn.service;
 import org.springframework.http.ResponseEntity;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.raxn.model.CouponCheckRequest;
+import com.raxn.request.model.CouponCheckRequest;
 
 public interface CouponsService {
 	

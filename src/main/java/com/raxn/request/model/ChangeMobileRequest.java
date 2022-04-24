@@ -1,8 +1,11 @@
-package com.raxn.model;
+package com.raxn.request.model;
 
 import javax.validation.constraints.NotBlank;
 
-public class TransHistoryRequest {
+public class ChangeMobileRequest {
+
+	@NotBlank
+	private String newmobile;
 
 	@NotBlank
 	private String mode;
@@ -10,8 +13,13 @@ public class TransHistoryRequest {
 	@NotBlank
 	private String userid;
 
-	@NotBlank
-	private String category;
+	public String getNewmobile() {
+		return newmobile;
+	}
+
+	public void setNewmobile(String newmobile) {
+		this.newmobile = newmobile;
+	}
 
 	public String getMode() {
 		return mode;
@@ -27,14 +35,6 @@ public class TransHistoryRequest {
 
 	public void setUserid(String userid) {
 		this.userid = userid;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
 	}
 
 }

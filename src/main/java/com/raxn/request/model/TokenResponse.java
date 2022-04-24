@@ -1,4 +1,4 @@
-package com.raxn.model;
+package com.raxn.request.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

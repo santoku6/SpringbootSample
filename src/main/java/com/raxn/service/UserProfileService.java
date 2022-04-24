@@ -2,10 +2,11 @@ package com.raxn.service;
 
 import org.springframework.http.ResponseEntity;
 
-import com.raxn.model.ChangeMobileRequest;
-import com.raxn.model.ChangePwdRequest;
-import com.raxn.model.TransHistoryRequest;
-import com.raxn.model.UpdateUserRequest;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.raxn.request.model.ChangeMobileRequest;
+import com.raxn.request.model.ChangePwdRequest;
+import com.raxn.request.model.TransHistoryRequest;
+import com.raxn.request.model.UpdateUserRequest;
 
 public interface UserProfileService {
 
@@ -15,6 +16,6 @@ public interface UserProfileService {
 
 	ResponseEntity<String> updateProfile(UpdateUserRequest updateUserReq);
 
-	ResponseEntity<String> transHistory(TransHistoryRequest transHistoryReq);
+	ResponseEntity<String> transHistory(TransHistoryRequest transHistoryReq) throws JsonProcessingException;
 
 }

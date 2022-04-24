@@ -38,8 +38,9 @@ public class RchMobile implements Serializable {
 	private String userid;
 	private String mobile;//
 	private String operator;//
+	private String category;//
 	private String circle;
-	private double rchAmount;//
+	private int rchAmount;//
 	private double walletAmount;
 	private double walletBalance;
 	private String usedCouponcode;
@@ -113,11 +114,11 @@ public class RchMobile implements Serializable {
 		this.circle = circle;
 	}
 
-	public double getRchAmount() {
+	public int getRchAmount() {
 		return rchAmount;
 	}
 
-	public void setRchAmount(double rchAmount) {
+	public void setRchAmount(int rchAmount) {
 		this.rchAmount = rchAmount;
 	}
 
@@ -231,6 +232,14 @@ public class RchMobile implements Serializable {
 
 	public void setCouponBenefit(String couponBenefit) {
 		this.couponBenefit = couponBenefit;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 }

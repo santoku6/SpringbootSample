@@ -9,7 +9,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 
 public class EmailSenderService {
 
-	Logger logger = LoggerFactory.getLogger(EmailSenderService.class);
+	Logger LOGGER = LoggerFactory.getLogger(EmailSenderService.class);
 
 	@Autowired
 	private JavaMailSender mailsender;
@@ -17,15 +17,15 @@ public class EmailSenderService {
 	public void sendEmail(String userId, String tomail, String subject, String body) {
 		SimpleMailMessage message = new SimpleMailMessage();
 		// message.setFrom("help@rechargeaxn.com");
-		logger.info("Entered into EmailSenderService.sendEmail()");
-		logger.info("tomail = " + tomail + " ,subject=" + subject + " ,body=" + body);
+		LOGGER.info("Entered into EmailSenderService.sendEmail()");
+		LOGGER.info("tomail = " + tomail + " ,subject=" + subject + " ,body=" + body);
 		message.setTo(tomail);
 		message.setText(body);
 		message.setSubject(subject);
 
 		mailsender.send(message);
 
-		logger.info("mail send done");
-		logger.info("Exiting sendEmail()");
+		LOGGER.info("mail send done");
+		LOGGER.info("Exiting sendEmail()");
 	}
 }

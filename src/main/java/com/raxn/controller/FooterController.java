@@ -42,7 +42,6 @@ public class FooterController {
 		} catch (JsonProcessingException e) {
 			appResponse.put(AppConstant.STATUS, errorStatus);
 			appResponse.put(AppConstant.MESSAGE, "Error in getFooterSettingByName(): " + e.getMessage());
-			//LOGGER.info(e.printStackTrace()"");
 			return new ResponseEntity<String>("Error in getFooterSettingByName(): "+ e.getMessage(),HttpStatus.SERVICE_UNAVAILABLE);
 		}
 		return new ResponseEntity<String>(response.getBody(), response.getStatusCode());

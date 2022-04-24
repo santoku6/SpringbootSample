@@ -9,40 +9,41 @@ import java.net.URLEncoder;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 
 public class PlansInfoService {
 
-	Logger logger = LoggerFactory.getLogger(PlansInfoService.class);
+	Logger LOGGER = LoggerFactory.getLogger(PlansInfoService.class);
+
+	@Value("${plansinfo.operator.url}")
+	private String PLANSINFO_OPERATOR_URL;
 
 	public void findOperator(String mobile) {
-		logger.info("Entered into findOperator()");
-		logger.info("mobile = " + mobile);
+		LOGGER.info("Entered into findOperator()");
+		LOGGER.info("mobile = " + mobile);
 		mobile = "8073280884";
-		//https://open-api.plansinfo.com/mobile/operator-circle?number=7893758280
 		try {
-			String requestUrl = "https://open-api.plansinfo.com/mobile/operator-circle?number="+URLEncoder.encode(mobile,"UTF-8");
+			String requestUrl = PLANSINFO_OPERATOR_URL + URLEncoder.encode(mobile, "UTF-8");
 			URL url = new URL(requestUrl);
-		    HttpURLConnection uc = (HttpURLConnection)url.openConnection();
-		    logger.info("response msg = "+uc.getResponseMessage());//ok
-		    logger.info("response code="+uc.getResponseCode());//200
-		    
-		    String json_response = "";
-		    InputStreamReader in = new InputStreamReader(uc.getInputStream());
-		    BufferedReader br = new BufferedReader(in);
-		    String text = "";
-		    while ((text = br.readLine()) != null) {
-		    	logger.info("text msg = "+text);
-		      json_response += text;
-		    }
-		    
-		    logger.info("json_response msg = "+json_response);
-		    uc.disconnect();
+			HttpURLConnection uc = (HttpURLConnection) url.openConnection();
+			LOGGER.info("response msg = " + uc.getResponseMessage());// ok
+			LOGGER.info("response code=" + uc.getResponseCode());// 200
+
+			String json_response = "";
+			InputStreamReader in = new InputStreamReader(uc.getInputStream());
+			BufferedReader br = new BufferedReader(in);
+			String text = "";
+			while ((text = br.readLine()) != null) {
+				LOGGER.info("text msg = " + text);
+				json_response += text;
+			}
+
+			LOGGER.info("json_response msg = " + json_response);
+			uc.disconnect();
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
-
-		logger.info("plansinfo done");
-		logger.info("Exiting findOperator()");
+		LOGGER.info("Exiting findOperator()");
 	}
 }

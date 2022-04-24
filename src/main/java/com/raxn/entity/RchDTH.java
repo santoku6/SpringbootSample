@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = { "dateTime", "updatedAt" }, allowGetters = true)
-public class RchDTH implements Serializable {
+public class RchDth implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

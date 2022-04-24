@@ -1,5 +1,6 @@
 package com.raxn.service.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -11,21 +12,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.raxn.entity.MobileEmailCheck;
+import com.raxn.entity.RchDth;
 import com.raxn.entity.RchMobile;
 import com.raxn.entity.User;
-import com.raxn.model.ChangeMobileRequest;
-import com.raxn.model.ChangePwdRequest;
-import com.raxn.model.TransHistoryRequest;
-import com.raxn.model.UpdateUserRequest;
 import com.raxn.repository.MobileEmailCheckRepository;
+import com.raxn.repository.RchDthRepository;
 import com.raxn.repository.RchMobileRepository;
 import com.raxn.repository.SuggestionRepository;
 import com.raxn.repository.UserRepository;
+import com.raxn.request.model.ChangeMobileRequest;
+import com.raxn.request.model.ChangePwdRequest;
+import com.raxn.request.model.TransHistoryRequest;
+import com.raxn.request.model.UpdateUserRequest;
+import com.raxn.response.model.TransHistoryResponse;
 import com.raxn.service.UserProfileService;
 import com.raxn.util.service.AppConstant;
 import com.raxn.util.service.CommonServiceUtil;
@@ -52,16 +57,12 @@ public class UserProfileServiceImpl implements UserProfileService {
 
 	@Autowired
 	MobileEmailCheckRepository mobileEmailRepo;
-	
+
 	@Autowired
 	RchMobileRepository rchMobileRepo;
-
+	
 	@Autowired
-	private AuthenticationManager authenticationManager;
-
-	/*
-	 * @Autowired private JWTUtil jwtUtil;
-	 */
+	RchDthRepository rchDthRepo;
 
 	@Autowired
 	SMSSenderService smsservice;
@@ -283,7 +284,6 @@ public class UserProfileServiceImpl implements UserProfileService {
 		LOGGER.info("updateUserReq request=" + ReflectionToStringBuilder.toString(updateUserReq));
 		JSONObject response = new JSONObject();
 		User userEntity = new User();
-		String dob = "", city = "";
 
 		if (null == updateUserReq.getName() || updateUserReq.getName().isEmpty()) {
 			response.put(AppConstant.STATUS, errorStatus);
@@ -359,12 +359,14 @@ public class UserProfileServiceImpl implements UserProfileService {
 	}
 
 	@Override
-	public ResponseEntity<String> transHistory(TransHistoryRequest transHistoryReq) {
+	public ResponseEntity<String> transHistory(TransHistoryRequest transHistoryReq) throws JsonProcessingException {
 		LOGGER.info("Entered transHistory() -> Start");
 		LOGGER.info("transHistoryReq request=" + ReflectionToStringBuilder.toString(transHistoryReq));
+		ObjectMapper objMapper = new ObjectMapper();
 		JSONObject response = new JSONObject();
-		User userEntity = new User();
-		String dob = "", city = "";
+		TransHistoryResponse transResponse = new TransHistoryResponse();
+		List<RchMobile> rechMobileHistory = new ArrayList<RchMobile>();
+		List<RchDth> rechDthHistory = new ArrayList<RchDth>();
 
 		if (null == transHistoryReq.getCategory() || transHistoryReq.getCategory().isEmpty()) {
 			response.put(AppConstant.STATUS, errorStatus);
@@ -422,20 +424,47 @@ public class UserProfileServiceImpl implements UserProfileService {
 			LOGGER.error("userid is not registered");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 		}
-		
-		Date dd = java.sql.Date.valueOf(java.time.LocalDate.now());
-		LOGGER.info("Today date is " + dd);
+
+		Date todayDate = java.sql.Date.valueOf(java.time.LocalDate.now());
+		LOGGER.info("Today date is " + todayDate);
 		Date dateBefore30Days = java.sql.Date.valueOf(java.time.LocalDate.now().minusDays(30));
 		LOGGER.info("dateBefore30Days=" + dateBefore30Days);
 		
-		List<RchMobile> rechHistory = rchMobileRepo.findByDateTime(userid,dateBefore30Days,dd);
-		
-		
-		
+		if(category.equalsIgnoreCase("recharge")) {
+			rechMobileHistory = rchMobileRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			rechDthHistory = rchDthRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			//TODO for fastag
+			
+		}
+
 		
 
+		List<TransHistoryResponse> displayHistory = new ArrayList<TransHistoryResponse>();
+		for (RchMobile indRech : rechMobileHistory) {
+			transResponse.setAmount(indRech.getRchAmount());
+			transResponse.setCategory(indRech.getCategory());
+			transResponse.setDatetime(indRech.getDateTime());
+			transResponse.setMobile(indRech.getMobile());
+			transResponse.setOperator(indRech.getOperator());
+			transResponse.setOrderid(indRech.getOrderid());
+			transResponse.setUserid(indRech.getUserid());
 
-		return null;
+			displayHistory.add(transResponse);
+		}
+		LOGGER.info("displayHistory size = " + displayHistory.size());
+
+		if (displayHistory.size() == 0) {
+			response.put(AppConstant.STATUS, successStatus);
+			response.put(AppConstant.MESSAGE, "no recharge history found");
+			LOGGER.error("no recharge history found");
+			return new ResponseEntity<String>(response.toString(), HttpStatus.OK);
+		}
+
+		response.put(AppConstant.STATUS, successStatus);
+		response.put(AppConstant.MESSAGE, "recharge history found");
+		LOGGER.error("recharge history found");
+		return new ResponseEntity<String>(objMapper.writeValueAsString(displayHistory), HttpStatus.OK);
+
 	}
 
 }

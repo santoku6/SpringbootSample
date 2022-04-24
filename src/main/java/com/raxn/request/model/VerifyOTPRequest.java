@@ -1,8 +1,8 @@
-package com.raxn.model;
+package com.raxn.request.model;
 
 import javax.validation.constraints.NotBlank;
 
-public class OTPModel {
+public class VerifyOTPRequest {
 	
 	@NotBlank
 	private String servicename;
@@ -12,6 +12,9 @@ public class OTPModel {
 	
 	@NotBlank
 	private String mode;
+	
+	@NotBlank
+	private String otp;
 
 	public String getServicename() {
 		return servicename;
@@ -35,6 +38,14 @@ public class OTPModel {
 
 	public void setMode(String mode) {
 		this.mode = mode;
+	}
+
+	public String getOtp() {
+		return otp;
+	}
+
+	public void setOtp(String otp) {
+		this.otp = otp;
 	}
 	
 }

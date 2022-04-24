@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.raxn.model.LoginRequest;
-import com.raxn.model.OTPModel;
-import com.raxn.model.ResetPWDRequest;
-import com.raxn.model.UserRequest;
-import com.raxn.model.VerifyOTPRequest;
+import com.raxn.request.model.LoginRequest;
+import com.raxn.request.model.OTPModel;
+import com.raxn.request.model.ResetPWDRequest;
+import com.raxn.request.model.UserRequest;
+import com.raxn.request.model.VerifyOTPRequest;
 import com.raxn.service.HomeService;
 
 @RestController

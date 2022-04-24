@@ -1,4 +1,4 @@
-package com.raxn.model;
+package com.raxn.request.model;
 
 public class CouponCheckRequest {
 
