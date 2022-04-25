@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = { "dateTime", "updatedAt" }, allowGetters = true)
-public class RchMobile implements Serializable {
+public class RchGiftcards implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -34,13 +34,11 @@ public class RchMobile implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	private String orderid;//
+	private String orderid;
 	private String userid;
-	private String mobile;//
-	private String operator;//
-	private String category;// mobile
-	private String circle;
-	private double rchAmount;//
+	private String operator;
+	private String category;// giftcard
+	private double rchAmount;
 	private double walletAmountBefore;
 	private double walletAmountAfter;
 	private String usedCouponcode;
@@ -59,7 +57,7 @@ public class RchMobile implements Serializable {
 	@Column(nullable = false, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreatedDate
-	private Date dateTime;//
+	private Date dateTime;
 
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -90,28 +88,12 @@ public class RchMobile implements Serializable {
 		this.userid = userid;
 	}
 
-	public String getMobile() {
-		return mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
-
 	public String getOperator() {
 		return operator;
 	}
 
 	public void setOperator(String operator) {
 		this.operator = operator;
-	}
-
-	public String getCircle() {
-		return circle;
-	}
-
-	public void setCircle(String circle) {
-		this.circle = circle;
 	}
 
 	public double getRchAmount() {

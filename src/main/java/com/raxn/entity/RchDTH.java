@@ -40,8 +40,8 @@ public class RchDth implements Serializable {
 	private String operator;
 	private String category;// dth
 	private double rchAmount;
-	private double walletAmount;
-	private double walletBalance;
+	private double walletAmountBefore;
+	private double walletAmountAfter;
 	private String usedCouponcode;
 	private String couponBenefit;
 
@@ -129,20 +129,20 @@ public class RchDth implements Serializable {
 		this.payAmountGateway = payAmountGateway;
 	}
 
-	public double getWalletAmount() {
-		return walletAmount;
+	public double getWalletAmountBefore() {
+		return walletAmountBefore;
 	}
 
-	public void setWalletAmount(double walletAmount) {
-		this.walletAmount = walletAmount;
+	public void setWalletAmountBefore(double walletAmountBefore) {
+		this.walletAmountBefore = walletAmountBefore;
 	}
 
-	public double getWalletBalance() {
-		return walletBalance;
+	public double getWalletAmountAfter() {
+		return walletAmountAfter;
 	}
 
-	public void setWalletBalance(double walletBalance) {
-		this.walletBalance = walletBalance;
+	public void setWalletAmountAfter(double walletAmountAfter) {
+		this.walletAmountAfter = walletAmountAfter;
 	}
 
 	public String getRechargeStatus() {

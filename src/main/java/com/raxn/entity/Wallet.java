@@ -42,7 +42,8 @@ public class Wallet implements Serializable {
 	private String remark;
 	private double debit;
 	private double credit;
-	private double walletBalance;
+	private double walletAmountBefore;
+	private double walletAmountAfter;
 	private String serviceType; // recharge,electricity,dth,wallet,refund,cashback
 	private String serviceOperator;
 	private String status;
@@ -106,12 +107,20 @@ public class Wallet implements Serializable {
 		this.credit = credit;
 	}
 
-	public double getWalletBalance() {
-		return walletBalance;
+	public double getWalletAmountBefore() {
+		return walletAmountBefore;
 	}
 
-	public void setWalletBalance(double walletBalance) {
-		this.walletBalance = walletBalance;
+	public void setWalletAmountBefore(double walletAmountBefore) {
+		this.walletAmountBefore = walletAmountBefore;
+	}
+
+	public double getWalletAmountAfter() {
+		return walletAmountAfter;
+	}
+
+	public void setWalletAmountAfter(double walletAmountAfter) {
+		this.walletAmountAfter = walletAmountAfter;
 	}
 
 	public String getServiceType() {

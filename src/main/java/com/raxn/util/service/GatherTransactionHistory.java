@@ -10,7 +10,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.raxn.entity.RchDth;
+import com.raxn.entity.RchGiftcards;
 import com.raxn.entity.RchMobile;
+import com.raxn.entity.Wallet;
 import com.raxn.repository.RchDthRepository;
 import com.raxn.repository.RchMobileRepository;
 import com.raxn.response.model.TransHistoryResponse;
@@ -55,19 +57,46 @@ public class GatherTransactionHistory {
 
 	}
 
-	public static List<String> listBillsHistory(String typeBills) {
+	public static List<TransHistoryResponse> listBillsHistory(String typeBills) {
 		return null;
 
 	}
 
-	public static List<String> listWalletHistory(String typeWallet) {
-		return null;
+	public static List<TransHistoryResponse> listWalletHistory(List<Wallet> rechWalletHistory) {
+		LOGGER.info("Entered into listWalletHistory()");
 
+		List<TransHistoryResponse> list1 = new ArrayList<TransHistoryResponse>();
+		TransHistoryResponse transResponse = new TransHistoryResponse();
+
+		for (Wallet walletLine : rechWalletHistory) {
+			BeanUtils.copyProperties(walletLine, transResponse);
+			transResponse.setCategory("wallet");
+			if (walletLine.getCredit() > 0) {
+				transResponse.setAmount(walletLine.getCredit());
+			}
+			if (walletLine.getDebit() > 0) {
+				transResponse.setAmount(walletLine.getDebit());
+			}
+			list1.add(transResponse);
+		}
+		System.out.println(rechWalletHistory.size() + "===" + list1.size());
+		return list1;
 	}
 
-	public static List<String> listGiftcardHistory(String typeGiftcard) {
-		return null;
+	public static List<TransHistoryResponse> listGiftcardHistory(List<RchGiftcards> rechGiftcardHistory) {
+		LOGGER.info("Entered into listGiftcardHistory()");
 
+		List<TransHistoryResponse> list1 = new ArrayList<TransHistoryResponse>();
+		TransHistoryResponse transResponse = new TransHistoryResponse();
+
+		for (RchGiftcards giftcardLine : rechGiftcardHistory) {
+			BeanUtils.copyProperties(giftcardLine, transResponse);
+			transResponse.setCategory("giftcard");
+			transResponse.setAmount(giftcardLine.getRchAmount());
+			list1.add(transResponse);
+		}
+		System.out.println(rechGiftcardHistory.size() + "===" + list1.size());
+		return list1;
 	}
 
 }

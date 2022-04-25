@@ -19,11 +19,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.raxn.entity.MobileEmailCheck;
 import com.raxn.entity.RchDth;
+import com.raxn.entity.RchGiftcards;
 import com.raxn.entity.RchMobile;
 import com.raxn.entity.User;
+import com.raxn.entity.Wallet;
 import com.raxn.repository.MobileEmailCheckRepository;
 import com.raxn.repository.RchDthRepository;
+import com.raxn.repository.RchGiftcardsRepository;
 import com.raxn.repository.RchMobileRepository;
+import com.raxn.repository.RchWalletRepository;
 import com.raxn.repository.SuggestionRepository;
 import com.raxn.repository.UserRepository;
 import com.raxn.request.model.ChangeMobileRequest;
@@ -61,6 +65,12 @@ public class UserProfileServiceImpl implements UserProfileService {
 
 	@Autowired
 	RchMobileRepository rchMobileRepo;
+
+	@Autowired
+	RchGiftcardsRepository rchGiftcardRepo;
+
+	@Autowired
+	RchWalletRepository rchWalletRepo;
 
 	@Autowired
 	RchDthRepository rchDthRepo;
@@ -368,6 +378,9 @@ public class UserProfileServiceImpl implements UserProfileService {
 		TransHistoryResponse transResponse = new TransHistoryResponse();
 		List<RchMobile> rechMobileHistory = new ArrayList<RchMobile>();
 		List<RchDth> rechDthHistory = new ArrayList<RchDth>();
+		List<Wallet> rechWalletHistory = new ArrayList<Wallet>();
+		List<RchGiftcards> rechGiftcardHistory = new ArrayList<RchGiftcards>();
+		List<TransHistoryResponse> displayHistory = new ArrayList<TransHistoryResponse>();
 
 		if (null == transHistoryReq.getCategory() || transHistoryReq.getCategory().isEmpty()) {
 			response.put(AppConstant.STATUS, errorStatus);
@@ -436,9 +449,24 @@ public class UserProfileServiceImpl implements UserProfileService {
 			rechDthHistory = rchDthRepo.findByDateTime(userid, dateBefore30Days, todayDate);
 			// TODO for fastag
 
+			displayHistory = GatherTransactionHistory.listRechargeHistory(rechMobileHistory, rechDthHistory);
+		}
+		if (category.equalsIgnoreCase("bills")) {
+			rechMobileHistory = rchMobileRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			rechDthHistory = rchDthRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			// TODO for fastag
+
+			displayHistory = GatherTransactionHistory.listRechargeHistory(rechMobileHistory, rechDthHistory);
+		}
+		if (category.equalsIgnoreCase("wallet")) {
+			rechWalletHistory = rchWalletRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			displayHistory = GatherTransactionHistory.listWalletHistory(rechWalletHistory);
+		}
+		if (category.equalsIgnoreCase("giftcards")) {
+			rechGiftcardHistory = rchGiftcardRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			displayHistory = GatherTransactionHistory.listGiftcardHistory(rechGiftcardHistory);
 		}
 
-		List<TransHistoryResponse> displayHistory = GatherTransactionHistory.listRechargeHistory(rechMobileHistory, rechDthHistory);
 		/*
 		 * for (RchMobile indRech : rechMobileHistory) {
 		 * transResponse.setAmount(indRech.getRchAmount());
@@ -455,14 +483,14 @@ public class UserProfileServiceImpl implements UserProfileService {
 
 		if (displayHistory.size() == 0) {
 			response.put(AppConstant.STATUS, successStatus);
-			response.put(AppConstant.MESSAGE, "no recharge history found");
-			LOGGER.error("no recharge history found");
+			response.put(AppConstant.MESSAGE, "no "+category+" history found");
+			LOGGER.error("no "+category+" history found");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.OK);
 		}
 
 		response.put(AppConstant.STATUS, successStatus);
-		response.put(AppConstant.MESSAGE, "recharge history found");
-		LOGGER.error("recharge history found");
+		response.put(AppConstant.MESSAGE, category+" history found");
+		LOGGER.error(category+" history found");
 		return new ResponseEntity<String>(objMapper.writeValueAsString(displayHistory), HttpStatus.OK);
 
 	}
