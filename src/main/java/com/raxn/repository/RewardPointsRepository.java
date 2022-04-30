@@ -10,5 +10,6 @@ public interface RewardPointsRepository extends JpaRepository<RewardPoints, Inte
 	
 	List<RewardPoints> findFirst20ByUseridOrderByDateTimeDesc(String userid);
 	
+	
 
 }

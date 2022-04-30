@@ -36,15 +36,11 @@ public class RewardPoints implements Serializable {
 
 	@NotBlank
 	private String userid;
-
 	private String activity;
-
-	private int debit;
-
-	private int credit;
-	private int balancePoint;
+	private double debit;
+	private double credit;
+	private double totalPoint;
 	private String status;
-
 	private String mode;
 
 	@Column(nullable = false, updatable = false)
@@ -76,28 +72,32 @@ public class RewardPoints implements Serializable {
 		this.activity = activity;
 	}
 
-	public int getDebit() {
+	public double getDebit() {
 		return debit;
 	}
 
-	public void setDebit(int debit) {
+	public void setDebit(double debit) {
 		this.debit = debit;
 	}
 
-	public int getCredit() {
+	public double getCredit() {
 		return credit;
 	}
 
-	public void setCredit(int credit) {
+	public void setCredit(double credit) {
 		this.credit = credit;
 	}
 
-	public int getBalancePoint() {
-		return balancePoint;
+	public double getTotalPoint() {
+		return totalPoint;
 	}
 
-	public void setBalancePoint(int balancePoint) {
-		this.balancePoint = balancePoint;
+	public void setTotalPoint(double totalPoint) {
+		this.totalPoint = totalPoint;
+	}
+
+	public void setTotalPoint(int totalPoint) {
+		this.totalPoint = totalPoint;
 	}
 
 	public String getStatus() {

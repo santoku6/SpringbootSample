@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = { "dateTime", "updatedAt" }, allowGetters = true)
-public class RchElectricity implements Serializable {
+public class RchGasAndCylinder implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -36,10 +36,13 @@ public class RchElectricity implements Serializable {
 
 	private String orderid;
 	private String userid;
-	private String consumerid;
+	private String mobileno;// for Cylinder
+	private String consumerid;// for Gas
 	private String consumerName;
-	private String state;
-	private String category;// electricity
+	private String agencyName;// for cylinder
+	private String custaddress;// for cylinder
+	private String category;// GasAndCylinder
+	private String subcategory;// Gas or Cylinder
 	private String operator;
 	private Date dueDate;
 	private double billAmount;
@@ -108,12 +111,36 @@ public class RchElectricity implements Serializable {
 		this.consumerName = consumerName;
 	}
 
-	public String getState() {
-		return state;
+	public String getMobileno() {
+		return mobileno;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public void setMobileno(String mobileno) {
+		this.mobileno = mobileno;
+	}
+
+	public String getAgencyName() {
+		return agencyName;
+	}
+
+	public void setAgencyName(String agencyName) {
+		this.agencyName = agencyName;
+	}
+
+	public String getCustaddress() {
+		return custaddress;
+	}
+
+	public void setCustaddress(String custaddress) {
+		this.custaddress = custaddress;
+	}
+
+	public String getSubcategory() {
+		return subcategory;
+	}
+
+	public void setSubcategory(String subcategory) {
+		this.subcategory = subcategory;
 	}
 
 	public String getOperator() {

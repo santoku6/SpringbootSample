@@ -18,16 +18,30 @@ import org.springframework.transaction.annotation.Transactional;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.raxn.entity.MobileEmailCheck;
+import com.raxn.entity.RchBroadbandLandline;
 import com.raxn.entity.RchDth;
+import com.raxn.entity.RchElectricity;
+import com.raxn.entity.RchFastag;
+import com.raxn.entity.RchGasAndCylinder;
 import com.raxn.entity.RchGiftcards;
+import com.raxn.entity.RchInsurance;
 import com.raxn.entity.RchMobile;
+import com.raxn.entity.RchPostpaid;
+import com.raxn.entity.RchWater;
 import com.raxn.entity.User;
 import com.raxn.entity.Wallet;
 import com.raxn.repository.MobileEmailCheckRepository;
+import com.raxn.repository.RchBroadbandLandlineRepository;
 import com.raxn.repository.RchDthRepository;
+import com.raxn.repository.RchElectricityRepository;
+import com.raxn.repository.RchFastagRepository;
+import com.raxn.repository.RchGasAndCylinderRepository;
 import com.raxn.repository.RchGiftcardsRepository;
+import com.raxn.repository.RchInsuranceRepository;
 import com.raxn.repository.RchMobileRepository;
+import com.raxn.repository.RchPostpaidRepository;
 import com.raxn.repository.RchWalletRepository;
+import com.raxn.repository.RchWaterRepository;
 import com.raxn.repository.SuggestionRepository;
 import com.raxn.repository.UserRepository;
 import com.raxn.request.model.ChangeMobileRequest;
@@ -74,6 +88,21 @@ public class UserProfileServiceImpl implements UserProfileService {
 
 	@Autowired
 	RchDthRepository rchDthRepo;
+
+	@Autowired
+	RchBroadbandLandlineRepository rchBBLLRepo;
+	@Autowired
+	RchElectricityRepository rchElectricityRepo;
+	@Autowired
+	RchFastagRepository rchFastagRepo;
+	@Autowired
+	RchGasAndCylinderRepository rchGasAndCylinderRepo;
+	@Autowired
+	RchInsuranceRepository rchInsuranceRepo;
+	@Autowired
+	RchPostpaidRepository rchPostpaidRepo;
+	@Autowired
+	RchWaterRepository rchWaterRepo;
 
 	@Autowired
 	SMSSenderService smsservice;
@@ -380,6 +409,15 @@ public class UserProfileServiceImpl implements UserProfileService {
 		List<RchDth> rechDthHistory = new ArrayList<RchDth>();
 		List<Wallet> rechWalletHistory = new ArrayList<Wallet>();
 		List<RchGiftcards> rechGiftcardHistory = new ArrayList<RchGiftcards>();
+
+		List<RchBroadbandLandline> rechBBLLHistory = new ArrayList<RchBroadbandLandline>();
+		List<RchElectricity> rechElectricityHistory = new ArrayList<RchElectricity>();
+		List<RchFastag> rechFastagHistory = new ArrayList<RchFastag>();
+		List<RchGasAndCylinder> rechgasAndCylinderHistory = new ArrayList<RchGasAndCylinder>();
+		List<RchInsurance> rechInsuranceHistory = new ArrayList<RchInsurance>();
+		List<RchPostpaid> rechPostpaidHistory = new ArrayList<RchPostpaid>();
+		List<RchWater> rechWaterHistory = new ArrayList<RchWater>();
+
 		List<TransHistoryResponse> displayHistory = new ArrayList<TransHistoryResponse>();
 
 		if (null == transHistoryReq.getCategory() || transHistoryReq.getCategory().isEmpty()) {
@@ -447,16 +485,21 @@ public class UserProfileServiceImpl implements UserProfileService {
 		if (category.equalsIgnoreCase("recharge")) {
 			rechMobileHistory = rchMobileRepo.findByDateTime(userid, dateBefore30Days, todayDate);
 			rechDthHistory = rchDthRepo.findByDateTime(userid, dateBefore30Days, todayDate);
-			// TODO for fastag
 
 			displayHistory = GatherTransactionHistory.listRechargeHistory(rechMobileHistory, rechDthHistory);
 		}
 		if (category.equalsIgnoreCase("bills")) {
-			rechMobileHistory = rchMobileRepo.findByDateTime(userid, dateBefore30Days, todayDate);
-			rechDthHistory = rchDthRepo.findByDateTime(userid, dateBefore30Days, todayDate);
-			// TODO for fastag
+			rechBBLLHistory = rchBBLLRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			rechElectricityHistory = rchElectricityRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			rechFastagHistory = rchFastagRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			rechgasAndCylinderHistory = rchGasAndCylinderRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			rechInsuranceHistory = rchInsuranceRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			rechPostpaidHistory = rchPostpaidRepo.findByDateTime(userid, dateBefore30Days, todayDate);
+			rechWaterHistory = rchWaterRepo.findByDateTime(userid, dateBefore30Days, todayDate);
 
-			displayHistory = GatherTransactionHistory.listRechargeHistory(rechMobileHistory, rechDthHistory);
+			displayHistory = GatherTransactionHistory.listBillsHistory(rechBBLLHistory, rechElectricityHistory,
+					rechFastagHistory, rechgasAndCylinderHistory, rechInsuranceHistory, rechPostpaidHistory,
+					rechWaterHistory);
 		}
 		if (category.equalsIgnoreCase("wallet")) {
 			rechWalletHistory = rchWalletRepo.findByDateTime(userid, dateBefore30Days, todayDate);
@@ -467,30 +510,18 @@ public class UserProfileServiceImpl implements UserProfileService {
 			displayHistory = GatherTransactionHistory.listGiftcardHistory(rechGiftcardHistory);
 		}
 
-		/*
-		 * for (RchMobile indRech : rechMobileHistory) {
-		 * transResponse.setAmount(indRech.getRchAmount());
-		 * transResponse.setCategory(indRech.getCategory());
-		 * transResponse.setDatetime(indRech.getDateTime());
-		 * transResponse.setMobile(indRech.getMobile());
-		 * transResponse.setOperator(indRech.getOperator());
-		 * transResponse.setOrderid(indRech.getOrderid());
-		 * transResponse.setUserid(indRech.getUserid());
-		 * 
-		 * displayHistory.add(transResponse); }
-		 */
 		LOGGER.info("displayHistory size = " + displayHistory.size());
 
 		if (displayHistory.size() == 0) {
 			response.put(AppConstant.STATUS, successStatus);
-			response.put(AppConstant.MESSAGE, "no "+category+" history found");
-			LOGGER.error("no "+category+" history found");
+			response.put(AppConstant.MESSAGE, "no " + category + " history found");
+			LOGGER.error("no " + category + " history found");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.OK);
 		}
 
 		response.put(AppConstant.STATUS, successStatus);
-		response.put(AppConstant.MESSAGE, category+" history found");
-		LOGGER.error(category+" history found");
+		response.put(AppConstant.MESSAGE, category + " history found");
+		LOGGER.error(category + " history found");
 		return new ResponseEntity<String>(objMapper.writeValueAsString(displayHistory), HttpStatus.OK);
 
 	}

@@ -180,11 +180,72 @@ public class RewardServiceImpl implements RewardService {
 		}
 		response.put(AppConstant.STATUS, successStatus);
 		response.put(AppConstant.REWARDPOINT, userInfo.getRewardPoint());
-		LOGGER.info("reward point of userid "+userInt+" is "+userInfo.getRewardPoint());
+		LOGGER.info("reward point of userid " + userInt + " is " + userInfo.getRewardPoint());
 		return new ResponseEntity<String>(response.toString(), HttpStatus.OK);
+	}
 
+	/**
+	 * 1st=Userid, 2nd=mode, 3rd=action, 4th=amount
+	 * 
+	 * @param params
+	 */
+	public void calculateAndSaveRewardPoint(String... params) {
+		LOGGER.info("Entered calculateAndSaveRewardPoint() -> Start");
+		LOGGER.info("params length ->" + params.length);
+		String action = null, activity = null;
+		double amount = 0.0, userRewardPoint=0.0;
+		String mode = null, userid = null;
+		int paramsize = 0;
+		RewardPoints rp = new RewardPoints();
+		String depostText = "Deposited Rs<AMOUNT> to wallet";
+		String donateText = "Donated Rs<AMOUNT> to social care fund";
+		User user = new User();
+		double userCreditPoint = 0.0;
 
+		paramsize = params.length;
 
+		if (paramsize == 3) {
+			userid = params[0];
+			mode = params[1];
+			action = params[2];
+		}
+		if (paramsize == 4) {
+			userid = params[0];
+			mode = params[1];
+			action = params[2];
+			amount = Double.parseDouble(params[3]);
+		}
+		
+		if(null != userid && !userid.isEmpty() && Integer.valueOf(userid) > 0) {
+			user = userRepository.findById(Integer.valueOf(userid)).orElse(null);
+		}
+		if(null != user) {
+			userRewardPoint = user.getRewardPoint();
+		}
+
+		if (action.equalsIgnoreCase("deposit")) {
+			activity = depostText.replace("<AMOUNT>", amount + "");
+			userCreditPoint = amount/100;
+			userRewardPoint += userCreditPoint;
+		}
+		if (action.equalsIgnoreCase("donate")) {
+			activity = donateText.replace("<AMOUNT>", amount + "");
+			userCreditPoint = amount*3/100;
+			userRewardPoint += userCreditPoint;
+		}
+
+		rp.setUserid(userid);
+		rp.setMode(mode);
+		if (null != activity && !activity.isEmpty()) {
+			rp.setActivity(activity);
+		}
+		rp.setCredit(userCreditPoint);
+		rp.setTotalPoint(userRewardPoint);
+		
+		user.setRewardPoint(userRewardPoint);
+		
+		userRepository.save(user);		
+		rewardrepo.save(rp);
 	}
 
 }

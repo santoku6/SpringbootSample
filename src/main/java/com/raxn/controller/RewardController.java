@@ -29,7 +29,7 @@ public class RewardController {
 		try {
 			response = rewardService.getRewardHistory(userid);
 		} catch (JsonProcessingException e) {
-			LOGGER.info("JsonProcessingException :: -> " + e.getMessage(), e);
+			LOGGER.error("JsonProcessingException :: -> " + e.getMessage(), e);
 		}
 		return new ResponseEntity<String>(response.getBody(), response.getStatusCode());
 	}
@@ -40,7 +40,7 @@ public class RewardController {
 		try {
 			response = rewardService.getRewardPoint(userid);
 		} catch (JsonProcessingException e) {
-			LOGGER.info("JsonProcessingException :: -> " + e.getMessage(), e);
+			LOGGER.error("JsonProcessingException :: -> " + e.getMessage(), e);
 		}
 		return new ResponseEntity<String>(response.getBody(), response.getStatusCode());
 	}
@@ -51,7 +51,7 @@ public class RewardController {
 		try {
 			response = rewardService.donate(donateRequest);
 		} catch (JsonProcessingException e) {
-			LOGGER.info("JsonProcessingException :: -> " + e.getMessage(), e);
+			LOGGER.error("JsonProcessingException :: -> " + e.getMessage(), e);
 		}
 		return new ResponseEntity<String>(response.getBody(), response.getStatusCode());
 	}

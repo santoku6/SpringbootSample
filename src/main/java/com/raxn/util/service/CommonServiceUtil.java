@@ -74,4 +74,24 @@ public class CommonServiceUtil {
 			}
 		}
 	}
+	
+	public static boolean mobileChecker(String mobile) {
+		boolean validNumber = false;
+		//String s1 = "6123456789";
+		String regex = "^[6-9]\\d{9}$";
+		if(mobile.length()==10 && mobile.matches(regex)) {
+			validNumber = true;
+		}
+		
+		System.out.println(validNumber);
+		return validNumber;
+	}
+	
+	//AB-ambika, PA-payone, MT-mitra
+	public static String getOurRefNo() {
+		String refNo = "";
+		refNo += RandomStringUtils.random(8, AppConstant.RANDOM_NUMS);
+		
+		return refNo;
+	}
 }

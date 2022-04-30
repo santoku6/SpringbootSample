@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = { "dateTime", "updatedAt" }, allowGetters = true)
-public class RchElectricity implements Serializable {
+public class RchInsurance implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -36,10 +36,12 @@ public class RchElectricity implements Serializable {
 
 	private String orderid;
 	private String userid;
-	private String consumerid;
+	private String mobileno;// for
+	private Date dob;
+	private String consumerid;// for
 	private String consumerName;
 	private String state;
-	private String category;// electricity
+	private String category;// insurance
 	private String operator;
 	private Date dueDate;
 	private double billAmount;
@@ -114,6 +116,22 @@ public class RchElectricity implements Serializable {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public String getMobileno() {
+		return mobileno;
+	}
+
+	public void setMobileno(String mobileno) {
+		this.mobileno = mobileno;
+	}
+
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
 	}
 
 	public String getOperator() {
