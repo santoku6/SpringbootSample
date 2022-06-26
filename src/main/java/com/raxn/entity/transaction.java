@@ -1,12 +1,14 @@
 package com.raxn.entity;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,23 +33,26 @@ public class transaction implements Serializable {
 	private static final long serialVersionUID = -4882066856075508431L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@NotBlank
 	@Column(unique = true)
-	private String userid;
+	private String username;
 
 	private String orderid;
 	private String txnId;
 	private double amount;
-	private String payment_mode; // recharge,electricity,dth,wallet,refund,cashback
+	private String payment_mode; // creditcard, debitcard, upi, netbanking
 	private String bankTxnId;
 	private String bankName;
+	private String currency;
 	private String responseCode;
+	private String gatewayname;
 	private String responseMsg;
+	private LocalDateTime txndate;
 	private String status;
-	private String mode;
+	private String mode;// web, app
 	private String remark;
 
 	@Column(nullable = false, updatable = false)
@@ -68,12 +73,12 @@ public class transaction implements Serializable {
 		this.id = id;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getOrderid() {
@@ -178,6 +183,30 @@ public class transaction implements Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+
+	public String getGatewayname() {
+		return gatewayname;
+	}
+
+	public void setGatewayname(String gatewayname) {
+		this.gatewayname = gatewayname;
+	}
+
+	public LocalDateTime getTxndate() {
+		return txndate;
+	}
+
+	public void setTxndate(LocalDateTime txndate) {
+		this.txndate = txndate;
 	}
 
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-	<property name="LOG_ROOT" value="/temp/applogs" />
-	<property name="UI_LOG_ROOT" value="/temp/uilogs" />
+	<property name="LOG_ROOT" value="temp/applogs" />
+	<property name="UI_LOG_ROOT" value="temp/uilogs" />
 	<property name="LOG_FILE_NAME" value="application" />
 	<property name="UI_LOG_FILE_NAME" value="ui" />
 	<property name="LOG_PATTERN"

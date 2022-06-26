@@ -6,7 +6,7 @@ import com.raxn.entity.LoginActivity;
 
 public interface LoginActivityRepository extends JpaRepository<LoginActivity, Integer>{
 	
-	LoginActivity findByUserid(String userid);
+	LoginActivity findByUsername(String username);
 	
 
 }

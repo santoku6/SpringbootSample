@@ -9,10 +9,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.raxn.entity.User;
 
-public class CustomUserDetails implements UserDetails{
+public class CustomUserDetails implements UserDetails {
+
+	//private static final Logger LOGGER = LoggerFactory.getLogger(CustomUserDetails.class);
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private User user;
 
 	public CustomUserDetails(User user) {
@@ -22,7 +24,9 @@ public class CustomUserDetails implements UserDetails{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return Collections.singleton(new SimpleGrantedAuthority(user.getRole()));
+		SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(user.getRole());
+		//System.out.println("simpleGrantedAuthority==="+simpleGrantedAuthority);
+		return Collections.singleton(simpleGrantedAuthority);
 	}
 
 	@Override
@@ -32,7 +36,7 @@ public class CustomUserDetails implements UserDetails{
 
 	@Override
 	public String getUsername() {
-		return user.getEmail();
+		return user.getUsername();
 	}
 
 	@Override
@@ -54,5 +58,9 @@ public class CustomUserDetails implements UserDetails{
 	public boolean isEnabled() {
 		return user.isActivatedStatus();
 	}
-	
+
+	public User getUser() {
+		return user;
+	}
+
 }

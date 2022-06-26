@@ -47,6 +47,10 @@ public class User implements Serializable {
 	@NotBlank
 	@Column(unique = true)
 	private String email;
+	
+	@NotBlank
+	@Column(unique = true)
+	private String username;
 
 	@NotBlank
 	private String tnc;// terms & conditions
@@ -78,6 +82,7 @@ public class User implements Serializable {
 	private String otpMode;// web or app mode for demanding otp
 	private String cashbackEarned;
 	private String role;
+	
 
 	@Column(nullable = false, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -279,6 +284,14 @@ public class User implements Serializable {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

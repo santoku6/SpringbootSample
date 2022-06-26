@@ -24,6 +24,8 @@ public class RechargeMobileRequest {
 	private String amountfrompaygateway;
 
 	private String code;
+	
+	private String servicecategory;
 
 	@NotBlank
 	private String mode;
@@ -98,6 +100,14 @@ public class RechargeMobileRequest {
 
 	public void setMode(String mode) {
 		this.mode = mode;
+	}
+
+	public String getServicecategory() {
+		return servicecategory;
+	}
+
+	public void setServicecategory(String servicecategory) {
+		this.servicecategory = servicecategory;
 	}
 
 }

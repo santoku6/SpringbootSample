@@ -12,7 +12,7 @@ public interface RchGiftcardsRepository extends JpaRepository<RchGiftcards, Inte
 
 	List<RchGiftcards> findByUserid(String userid);
 
-	@Query("FROM RchGiftcards WHERE userid is ?1 AND dateTime between ?2 And ?3")
-	List<RchGiftcards> findByDateTime(String userid, Date pastDate, Date currentDate);
+	@Query("FROM RchGiftcards WHERE username is ?1 AND dateTime between ?2 And ?3")
+	List<RchGiftcards> findByDateTime(String username, Date pastDate, Date currentDate);
 
 }

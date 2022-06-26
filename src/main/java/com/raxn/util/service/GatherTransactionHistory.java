@@ -47,7 +47,7 @@ public class GatherTransactionHistory {
 			transResponse.setAmount(mobileLine.getRchAmount());
 			transListResponse.add(transResponse);
 		}
-		System.out.println(rechMobileHistory.size() + "===" + transListResponse.size());
+		//System.out.println(rechMobileHistory.size() + "===" + transListResponse.size());
 		for (RchDth dthLine : rechDthHistory) {
 			TransHistoryResponse transResponse = new TransHistoryResponse();
 			BeanUtils.copyProperties(dthLine, transResponse);
@@ -55,11 +55,11 @@ public class GatherTransactionHistory {
 			transResponse.setAmount(dthLine.getRchAmount());
 			transListResponse.add(transResponse);
 		}
-		System.out.println("Total size=" + transListResponse.size());
+		//System.out.println("Total size=" + transListResponse.size());
 
 		transListResponse.sort(Comparator.comparing(TransHistoryResponse::getDatetime).reversed());
 
-		System.out.println("Total size=" + transListResponse.size());
+		LOGGER.info("recharge list count =" + transListResponse.size());
 
 		return transListResponse;
 
@@ -69,7 +69,7 @@ public class GatherTransactionHistory {
 			List<RchElectricity> rechElectricityHistory, List<RchFastag> rechFastagHistory,
 			List<RchGasAndCylinder> rechGasAndCylinderHistory, List<RchInsurance> rechInsuranceHistory,
 			List<RchPostpaid> rechPostpaidHistory, List<RchWater> rechWaterHistory) {
-		LOGGER.info("Entered into listRechargeHistory()");
+		LOGGER.info("Entered into listBillsHistory()");
 
 		List<TransHistoryResponse> transListResponse = new ArrayList<TransHistoryResponse>();
 
@@ -80,7 +80,7 @@ public class GatherTransactionHistory {
 			transResponse.setAmount(bbllLine.getBillAmount());
 			transListResponse.add(transResponse);
 		}
-		System.out.println("list size after BBLL=" + transListResponse.size());
+		//System.out.println("list size after BBLL=" + transListResponse.size());
 		for (RchElectricity electricityLine : rechElectricityHistory) {
 			TransHistoryResponse transResponse = new TransHistoryResponse();
 			BeanUtils.copyProperties(electricityLine, transResponse);
@@ -88,7 +88,7 @@ public class GatherTransactionHistory {
 			transResponse.setAmount(electricityLine.getBillAmount());
 			transListResponse.add(transResponse);
 		}
-		System.out.println("list size after electricity=" + transListResponse.size());
+		//System.out.println("list size after electricity=" + transListResponse.size());
 		for (RchFastag fastagLine : rechFastagHistory) {
 			TransHistoryResponse transResponse = new TransHistoryResponse();
 			BeanUtils.copyProperties(fastagLine, transResponse);
@@ -96,7 +96,7 @@ public class GatherTransactionHistory {
 			transResponse.setAmount(fastagLine.getBillAmount());
 			transListResponse.add(transResponse);
 		}
-		System.out.println("list size after fastag=" + transListResponse.size());
+		//System.out.println("list size after fastag=" + transListResponse.size());
 		for (RchGasAndCylinder gasAndCylinderLine : rechGasAndCylinderHistory) {
 			TransHistoryResponse transResponse = new TransHistoryResponse();
 			BeanUtils.copyProperties(gasAndCylinderLine, transResponse);
@@ -104,7 +104,7 @@ public class GatherTransactionHistory {
 			transResponse.setAmount(gasAndCylinderLine.getBillAmount());
 			transListResponse.add(transResponse);
 		}
-		System.out.println("list size after GasAndCylinder=" + transListResponse.size());
+		//System.out.println("list size after GasAndCylinder=" + transListResponse.size());
 		for (RchInsurance insuranceLine : rechInsuranceHistory) {
 			TransHistoryResponse transResponse = new TransHistoryResponse();
 			BeanUtils.copyProperties(insuranceLine, transResponse);
@@ -112,7 +112,7 @@ public class GatherTransactionHistory {
 			transResponse.setAmount(insuranceLine.getBillAmount());
 			transListResponse.add(transResponse);
 		}
-		System.out.println("list size after insurance=" + transListResponse.size());
+		//System.out.println("list size after insurance=" + transListResponse.size());
 		for (RchPostpaid postpaidLine : rechPostpaidHistory) {
 			TransHistoryResponse transResponse = new TransHistoryResponse();
 			BeanUtils.copyProperties(postpaidLine, transResponse);
@@ -120,7 +120,7 @@ public class GatherTransactionHistory {
 			transResponse.setAmount(postpaidLine.getBillAmount());
 			transListResponse.add(transResponse);
 		}
-		System.out.println("list size after postpaidLine=" + transListResponse.size());
+		//System.out.println("list size after postpaidLine=" + transListResponse.size());
 		for (RchWater waterLine : rechWaterHistory) {
 			TransHistoryResponse transResponse = new TransHistoryResponse();
 			BeanUtils.copyProperties(waterLine, transResponse);
@@ -128,10 +128,10 @@ public class GatherTransactionHistory {
 			transResponse.setAmount(waterLine.getBillAmount());
 			transListResponse.add(transResponse);
 		}
-		System.out.println("list size after water=" + transListResponse.size());
+		//System.out.println("list size after water=" + transListResponse.size());
 
 		transListResponse.sort(Comparator.comparing(TransHistoryResponse::getDatetime).reversed());
-		System.out.println("Total size=" + transListResponse.size());
+		LOGGER.info("bill list count=" + transListResponse.size());
 		return transListResponse;
 	}
 
@@ -152,7 +152,8 @@ public class GatherTransactionHistory {
 			}
 			transListResponse.add(transResponse);
 		}
-		System.out.println(rechWalletHistory.size() + "===" + transListResponse.size());
+		//System.out.println(rechWalletHistory.size() + "===" + transListResponse.size());
+		LOGGER.info("wallet list count =" + transListResponse.size());
 		return transListResponse;
 	}
 
@@ -168,7 +169,8 @@ public class GatherTransactionHistory {
 			transResponse.setAmount(giftcardLine.getRchAmount());
 			transListResponse.add(transResponse);
 		}
-		System.out.println(rechGiftcardHistory.size() + "===" + transListResponse.size());
+		//System.out.println(rechGiftcardHistory.size() + "===" + transListResponse.size());
+		LOGGER.info("giftcard list count =" + transListResponse.size());
 		return transListResponse;
 	}
 

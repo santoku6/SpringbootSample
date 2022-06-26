@@ -8,7 +8,7 @@ public class TransHistoryRequest {
 	private String mode;
 
 	@NotBlank
-	private String userid;
+	private String username;
 
 	@NotBlank
 	private String category;
@@ -21,12 +21,12 @@ public class TransHistoryRequest {
 		this.mode = mode;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getCategory() {

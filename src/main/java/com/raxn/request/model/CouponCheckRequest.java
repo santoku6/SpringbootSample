@@ -2,18 +2,18 @@ package com.raxn.request.model;
 
 public class CouponCheckRequest {
 
-	private String userid;
+	private String username;
 	private String code; // coupon code
 	private String category;// wallet,recharge/dth,bills,giftcards
 	private String mode;// web, app
 	private String amount;
 
-	public String getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getAmount() {

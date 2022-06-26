@@ -1,9 +1,15 @@
 package com.raxn.util.service;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
@@ -15,6 +21,9 @@ public class JWTUtil {
 	
 	@Value("${app.secret}")
 	private String SECRET_KEY;
+	
+	//@Autowired
+	//CustomUserDetails userdetails;
 	
 	//read subject/username
 	public String getUsername(String token) {
@@ -36,22 +45,46 @@ public class JWTUtil {
         Date expDate = getExpirationDate(token);
         return expDate.before(new Date(System.currentTimeMillis()));
     }
+    
+  //generate token
+    public String generateToken(UserDetails userDetails) {
+		Map<String, Object> claims = new HashMap<>();
 
-    //generate token
-    public String createToken(String subject) {
-    	return Jwts.builder()
+		Collection<? extends GrantedAuthority> roles = userDetails.getAuthorities();
+
+		if (roles.contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
+			claims.put("isAdmin", true);
+		}
+		if (roles.contains(new SimpleGrantedAuthority("ROLE_USER"))) {
+			claims.put("isUser", true);
+		}
+
+		return createToken(claims, userDetails.getUsername());
+	}
+
+    
+    private String createToken(Map<String, Object> claims, String subject) {
+    	return Jwts.builder().setClaims(claims)
 				.setSubject(subject.trim())
 				.setIssuer("RECHARGEAXN TECH")
 				.setIssuedAt(new Date())
-				.setExpiration(new Date(System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(3)))
+				.setExpiration(new Date(System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(20)))
 				.signWith(SignatureAlgorithm.HS512, SECRET_KEY.getBytes())
 				.compact();
     }
+    
+    //refresh token
+    public String generateRefreshToken(Map<String, Object> claims, String subject) {
+    	
+    	return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date())
+				.setExpiration(new Date(System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(10)))
+				.signWith(SignatureAlgorithm.HS512, SECRET_KEY.getBytes()).compact();
+	}
 
     //validate username in token and exp date
-    public Boolean validateToken(String token, String identifier) {
+    public Boolean validateToken(String token, UserDetails userDetails) {
         final String username = getUsername(token);
-        return (username.equals(identifier) && !isTokenExpired(token));
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
 }

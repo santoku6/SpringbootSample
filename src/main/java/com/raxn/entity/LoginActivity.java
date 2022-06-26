@@ -22,7 +22,7 @@ public class LoginActivity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	private String userid;
+	private String username;
 	private Date loginTime;
 	private Date logoutTime;
 	private String ipv4Address;
@@ -33,6 +33,9 @@ public class LoginActivity implements Serializable {
 	private String deviceInfo;
 	private String browserInfo;
 	private String mode;
+	private String latitude;
+	private String longitude;
+	private String postalcode;
 
 	public int getId() {
 		return id;
@@ -42,12 +45,12 @@ public class LoginActivity implements Serializable {
 		this.id = id;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public Date getLoginTime() {
@@ -128,6 +131,30 @@ public class LoginActivity implements Serializable {
 
 	public void setMode(String mode) {
 		this.mode = mode;
+	}
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
+	public String getPostalcode() {
+		return postalcode;
+	}
+
+	public void setPostalcode(String postalcode) {
+		this.postalcode = postalcode;
 	}
 
 }

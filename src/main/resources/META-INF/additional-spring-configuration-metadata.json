@@ -58,5 +58,30 @@
     "name": "plansinfo.plans.url",
     "type": "java.lang.String",
     "description": "A description for 'plansinfo.plans.url'"
+  },
+  {
+    "name": "suggestion.path",
+    "type": "java.lang.String",
+    "description": "A description for 'suggestion.path'"
+  },
+  {
+    "name": "slider.path",
+    "type": "java.lang.String",
+    "description": "A description for 'slider.path'"
+  },
+  {
+    "name": "serviceicon.path",
+    "type": "java.lang.String",
+    "description": "A description for 'serviceicon.path'"
+  },
+  {
+    "name": "mailtemplate.path",
+    "type": "java.lang.String",
+    "description": "A description for 'mailtemplate.path'"
+  },
+  {
+    "name": "ipaddress.url",
+    "type": "java.lang.String",
+    "description": "A description for 'ipaddress.url'"
   }
 ]}

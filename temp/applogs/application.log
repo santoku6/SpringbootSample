@@ -1,0 +1,604 @@
+2022-06-23 02:11:37.868 [WARN ] com.zaxxer.hikari.pool.HikariPool:run:788 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h1m56s998ms351탎200ns).
+2022-06-23 05:18:35.130 [WARN ] com.zaxxer.hikari.pool.HikariPool:run:788 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h1m57s205ms907탎900ns).
+2022-06-23 08:25:32.154 [WARN ] com.zaxxer.hikari.pool.HikariPool:run:788 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h1m56s947ms667탎800ns).
+2022-06-23 10:05:34.259 [WARN ] com.zaxxer.hikari.pool.HikariPool:run:788 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h35m2s52ms438탎700ns).
+2022-06-23 10:09:27.000 [WARN ] com.zaxxer.hikari.pool.HikariPool:run:788 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m52s754ms385탎500ns).
+2022-06-23 18:10:23.926 [INFO ] org.hibernate.validator.internal.util.Version:<clinit>:21 - HV000001: Hibernate Validator 6.2.2.Final
+2022-06-23 18:10:23.940 [INFO ] com.raxn.RaxnProjectApplication:logStarting:55 - Starting RaxnProjectApplication using Java 1.8.0_301 on DESKTOP-CQ4QQNA with PID 8688 (C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject\target\classes started by talkn in C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject)
+2022-06-23 18:10:23.941 [INFO ] com.raxn.RaxnProjectApplication:logStartupProfileInfo:640 - No active profile set, falling back to 1 default profile: "default"
+2022-06-23 18:10:24.056 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-23 18:10:24.056 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-23 18:10:25.275 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-23 18:10:25.554 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:201 - Finished Spring Data repository scanning in 267 ms. Found 52 JPA repository interfaces.
+2022-06-23 18:10:26.513 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2022-06-23 18:10:26.525 [INFO ] org.apache.coyote.http11.Http11NioProtocol:log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2022-06-23 18:10:26.526 [INFO ] org.apache.catalina.core.StandardService:log:173 - Starting service [Tomcat]
+2022-06-23 18:10:26.527 [INFO ] org.apache.catalina.core.StandardEngine:log:173 - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-23 18:10:26.618 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/rechaxn]:log:173 - Initializing Spring embedded WebApplicationContext
+2022-06-23 18:10:26.619 [INFO ] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:prepareWebApplicationContext:290 - Root WebApplicationContext: initialization completed in 2562 ms
+2022-06-23 18:10:26.771 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:110 - HikariPool-1 - Starting...
+2022-06-23 18:10:27.006 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:123 - HikariPool-1 - Start completed.
+2022-06-23 18:10:27.155 [INFO ] org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-23 18:10:27.246 [INFO ] org.hibernate.Version:logVersion:44 - HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-06-23 18:10:27.483 [INFO ] org.hibernate.annotations.common.Version:<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-23 18:10:27.649 [INFO ] org.hibernate.dialect.Dialect:<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-06-23 18:10:29.402 [INFO ] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-23 18:10:29.415 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 18:10:30.888 [WARN ] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:openEntityManagerInViewInterceptor:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-23 18:10:31.756 [INFO ] org.springframework.security.web.DefaultSecurityFilterChain:<init>:52 - Will not secure any request
+2022-06-23 18:10:32.533 [INFO ] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:startServer:58 - LiveReload server is running on port 35729
+2022-06-23 18:10:32.567 [INFO ] org.apache.coyote.http11.Http11NioProtocol:log:173 - Starting ProtocolHandler ["http-nio-8080"]
+2022-06-23 18:10:32.605 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:start:220 - Tomcat started on port(s): 8080 (http) with context path '/rechaxn'
+2022-06-23 18:10:32.623 [INFO ] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor:finishRegistration:315 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2022-06-23 18:10:32.634 [INFO ] com.raxn.RaxnProjectApplication:logStarted:61 - Started RaxnProjectApplication in 9.326 seconds (JVM running for 10.935)
+2022-06-23 18:10:40.255 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/rechaxn]:log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-23 18:10:40.256 [INFO ] org.springframework.web.servlet.DispatcherServlet:initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+2022-06-23 18:10:40.258 [INFO ] org.springframework.web.servlet.DispatcherServlet:initServletBean:547 - Completed initialization in 2 ms
+2022-06-23 18:10:40.467 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1169 - Entered loginUser() -> Start
+2022-06-23 18:10:40.468 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1170 - identifier = 8073280884
+2022-06-23 18:10:40.568 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:10:40.569 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=8073280884
+2022-06-23 18:10:40.627 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:10:52.543 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1248 - isauthenticated=true
+2022-06-23 18:10:52.544 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:401 - Entered generateOTP() -> Start
+2022-06-23 18:10:52.569 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:402 - otpRequest=com.raxn.request.model.OTPModel@aa3fef0[identifier=8073280884,mode=web,servicename=loginusr]
+2022-06-23 18:10:52.643 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:673 - OTP to set:285603
+2022-06-23 18:10:52.655 [INFO ] com.raxn.util.service.EmailSenderService:formatOTPEmail:137 - Entered into formatOTPEmail()
+2022-06-23 18:10:52.655 [INFO ] com.raxn.util.service.EmailSenderService:formatOTPEmail:138 - email=santosh@getnada.com ,purpose=OTP_mail
+2022-06-23 18:10:52.726 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:39 - Entered into sendEmail()
+2022-06-23 18:10:52.727 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:40 - tomail = santosh@getnada.com ,subject=OTP mail from RechargeAXN
+2022-06-23 18:10:58.109 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:55 - mail send done
+2022-06-23 18:10:58.110 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:56 - Exiting sendEmail()
+2022-06-23 18:11:32.689 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1267 - Entered nextLoginUser() -> Start
+2022-06-23 18:11:32.705 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1273 - Parameter verifyOTPRequest = {"servicename":"loginusr","identifier":"8073280884","mode":"web","otp":"285603","ipaddress":"49.37.73.153","deviceinfo":null,"browserinfo":null}
+2022-06-23 18:11:32.710 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:769 - Entered verifyOTP() -> Start
+2022-06-23 18:11:32.710 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:770 - verifyOTPRequest=com.raxn.request.model.VerifyOTPRequest@145f058a[identifier=8073280884,mode=web,otp=285603,servicename=loginusr]
+2022-06-23 18:11:32.715 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:969 - differenceTS (in ms)=40091
+2022-06-23 18:11:32.716 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:983 - OTP matched & verified for identifier 8073280884
+2022-06-23 18:11:32.717 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1287 - OTP Verification status code = 200
+2022-06-23 18:11:32.717 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1291 - login OTP verification completed
+2022-06-23 18:11:32.726 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:11:32.726 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=8073280884
+2022-06-23 18:11:32.728 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:11:39.836 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1316 - full authenticated user::8073280884
+2022-06-23 18:11:39.839 [INFO ] com.raxn.service.impl.HomeServiceImpl:storeUserLoginInfo:1329 - Entered storeUserLoginInfo() -> Start
+2022-06-23 18:11:40.599 [INFO ] com.raxn.service.impl.HomeServiceImpl:storeUserLoginInfo:1341 - Response Code :: 200
+2022-06-23 18:12:46.252 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/ggg
+2022-06-23 18:12:48.321 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:12:51.655 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:12:51.656 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:12:51.666 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:13:37.003 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/aabb
+2022-06-23 18:13:50.987 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:14:42.264 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:14:42.273 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:14:42.444 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:16:18.532 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/index
+2022-06-23 18:16:18.533 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:16:18.538 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:16:18.538 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:16:18.541 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:17:10.321 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/user/suggestion
+2022-06-23 18:17:12.387 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:17:22.937 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:17:22.943 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:17:23.112 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:19:57.146 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/user/suggestion
+2022-06-23 18:19:57.147 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:19:57.156 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:19:57.156 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:19:57.163 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:22:33.852 [INFO ] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:shutdown:159 - Application shutdown requested.
+2022-06-23 18:22:33.994 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 18:22:33.997 [INFO ] com.zaxxer.hikari.HikariDataSource:close:350 - HikariPool-1 - Shutdown initiated...
+2022-06-23 18:22:34.011 [INFO ] com.zaxxer.hikari.HikariDataSource:close:352 - HikariPool-1 - Shutdown completed.
+2022-06-23 18:33:51.264 [INFO ] org.hibernate.validator.internal.util.Version:<clinit>:21 - HV000001: Hibernate Validator 6.2.2.Final
+2022-06-23 18:33:51.282 [INFO ] com.raxn.RaxnProjectApplication:logStarting:55 - Starting RaxnProjectApplication using Java 1.8.0_301 on DESKTOP-CQ4QQNA with PID 1216 (C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject\target\classes started by talkn in C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject)
+2022-06-23 18:33:51.283 [INFO ] com.raxn.RaxnProjectApplication:logStartupProfileInfo:640 - No active profile set, falling back to 1 default profile: "default"
+2022-06-23 18:33:51.392 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-23 18:33:51.393 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-23 18:33:52.929 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-23 18:33:53.327 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:201 - Finished Spring Data repository scanning in 377 ms. Found 52 JPA repository interfaces.
+2022-06-23 18:33:54.290 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2022-06-23 18:33:54.303 [INFO ] org.apache.coyote.http11.Http11NioProtocol:log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2022-06-23 18:33:54.304 [INFO ] org.apache.catalina.core.StandardService:log:173 - Starting service [Tomcat]
+2022-06-23 18:33:54.304 [INFO ] org.apache.catalina.core.StandardEngine:log:173 - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-23 18:33:54.460 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/rechaxn]:log:173 - Initializing Spring embedded WebApplicationContext
+2022-06-23 18:33:54.461 [INFO ] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:prepareWebApplicationContext:290 - Root WebApplicationContext: initialization completed in 3067 ms
+2022-06-23 18:33:54.622 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:110 - HikariPool-1 - Starting...
+2022-06-23 18:33:54.842 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:123 - HikariPool-1 - Start completed.
+2022-06-23 18:33:54.987 [INFO ] org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-23 18:33:55.059 [INFO ] org.hibernate.Version:logVersion:44 - HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-06-23 18:33:55.267 [INFO ] org.hibernate.annotations.common.Version:<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-23 18:33:55.434 [INFO ] org.hibernate.dialect.Dialect:<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-06-23 18:33:57.260 [INFO ] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-23 18:33:57.272 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 18:33:58.692 [WARN ] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:openEntityManagerInViewInterceptor:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-23 18:33:59.564 [INFO ] org.springframework.security.web.DefaultSecurityFilterChain:<init>:52 - Will not secure any request
+2022-06-23 18:34:00.356 [INFO ] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:startServer:58 - LiveReload server is running on port 35729
+2022-06-23 18:34:00.390 [INFO ] org.apache.coyote.http11.Http11NioProtocol:log:173 - Starting ProtocolHandler ["http-nio-8080"]
+2022-06-23 18:34:00.425 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:start:220 - Tomcat started on port(s): 8080 (http) with context path '/rechaxn'
+2022-06-23 18:34:00.447 [INFO ] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor:finishRegistration:315 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2022-06-23 18:34:00.463 [INFO ] com.raxn.RaxnProjectApplication:logStarted:61 - Started RaxnProjectApplication in 9.724 seconds (JVM running for 10.909)
+2022-06-23 18:34:27.479 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/rechaxn]:log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-23 18:34:27.480 [INFO ] org.springframework.web.servlet.DispatcherServlet:initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+2022-06-23 18:34:27.481 [INFO ] org.springframework.web.servlet.DispatcherServlet:initServletBean:547 - Completed initialization in 1 ms
+2022-06-23 18:34:27.662 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1169 - Entered loginUser() -> Start
+2022-06-23 18:34:27.663 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1170 - identifier = 8073280884
+2022-06-23 18:34:27.765 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:34:27.765 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=8073280884
+2022-06-23 18:34:27.814 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:34:27.904 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1248 - isauthenticated=true
+2022-06-23 18:34:27.904 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:401 - Entered generateOTP() -> Start
+2022-06-23 18:34:27.920 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:402 - otpRequest=com.raxn.request.model.OTPModel@164db06f[identifier=8073280884,mode=web,servicename=loginusr]
+2022-06-23 18:34:27.969 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:673 - OTP to set:331550
+2022-06-23 18:34:27.978 [INFO ] com.raxn.util.service.EmailSenderService:formatOTPEmail:137 - Entered into formatOTPEmail()
+2022-06-23 18:34:27.979 [INFO ] com.raxn.util.service.EmailSenderService:formatOTPEmail:138 - email=santosh@getnada.com ,purpose=OTP_mail
+2022-06-23 18:34:28.017 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:39 - Entered into sendEmail()
+2022-06-23 18:34:28.018 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:40 - tomail = santosh@getnada.com ,subject=OTP mail from RechargeAXN
+2022-06-23 18:34:33.345 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:55 - mail send done
+2022-06-23 18:34:33.346 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:56 - Exiting sendEmail()
+2022-06-23 18:34:51.974 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1267 - Entered nextLoginUser() -> Start
+2022-06-23 18:34:51.992 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1273 - Parameter verifyOTPRequest = {"servicename":"loginusr","identifier":"8073280884","mode":"web","otp":"331550","ipaddress":"49.37.73.153","deviceinfo":null,"browserinfo":null}
+2022-06-23 18:34:51.998 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:769 - Entered verifyOTP() -> Start
+2022-06-23 18:34:51.999 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:770 - verifyOTPRequest=com.raxn.request.model.VerifyOTPRequest@493a4920[identifier=8073280884,mode=web,otp=331550,servicename=loginusr]
+2022-06-23 18:34:52.008 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:969 - differenceTS (in ms)=24055
+2022-06-23 18:34:52.009 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:983 - OTP matched & verified for identifier 8073280884
+2022-06-23 18:34:52.009 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1287 - OTP Verification status code = 200
+2022-06-23 18:34:52.010 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1291 - login OTP verification completed
+2022-06-23 18:34:52.016 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:34:52.016 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=8073280884
+2022-06-23 18:34:52.018 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:34:52.070 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1316 - full authenticated user::8073280884
+2022-06-23 18:34:52.071 [INFO ] com.raxn.service.impl.HomeServiceImpl:storeUserLoginInfo:1329 - Entered storeUserLoginInfo() -> Start
+2022-06-23 18:34:52.939 [INFO ] com.raxn.service.impl.HomeServiceImpl:storeUserLoginInfo:1341 - Response Code :: 200
+2022-06-23 18:35:37.899 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/user/suggestion
+2022-06-23 18:35:37.900 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:35:37.959 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:35:37.959 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:35:37.962 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:36:21.411 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/userinfo
+2022-06-23 18:36:21.411 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:36:21.415 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:36:21.415 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:36:21.419 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:36:23.517 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/userinfo
+2022-06-23 18:36:23.518 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:36:23.523 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:36:23.524 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:36:23.528 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:36:24.762 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/userinfo
+2022-06-23 18:36:24.763 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:36:24.765 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:36:24.766 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:36:24.768 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:38:17.256 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/userinfo
+2022-06-23 18:38:17.256 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:38:17.261 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:38:17.261 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:38:17.263 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:40:32.242 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/userinfo
+2022-06-23 18:40:32.243 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:40:32.250 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:40:32.251 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:40:32.256 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:41:50.175 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/userinfo
+2022-06-23 18:41:50.177 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:41:50.189 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:41:50.190 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:41:50.195 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:41:52.197 [INFO ] com.raxn.service.impl.HomeServiceImpl:getUserInfo:1456 - Entered getUserInfo() -> Start
+2022-06-23 18:41:52.200 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:41:52.201 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:41:52.209 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:42:37.961 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/user/777777
+2022-06-23 18:42:37.962 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:42:37.968 [ERROR] com.raxn.security.SecurityFilter:doFilterInternal:106 - invalid tokenJWT expired at 2022-06-22T14:11:19Z. Current time: 2022-06-23T18:42:37Z, a difference of 102678966 milliseconds.  Allowed clock skew: 0 milliseconds.
+2022-06-23 18:43:09.529 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/user/777777
+2022-06-23 18:43:09.530 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 18:43:09.538 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 18:43:09.538 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 18:43:09.545 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 18:43:10.817 [INFO ] com.raxn.service.impl.AdminServiceImpl:getAdminByUserName:60 - Entered getAdminByUserName() -> Start
+2022-06-23 18:43:10.817 [INFO ] com.raxn.service.impl.AdminServiceImpl:getAdminByUserName:61 - Parameter username -> 777777
+2022-06-23 18:43:10.824 [ERROR] com.raxn.service.impl.AdminServiceImpl:getAdminByUserName:69 - No Admin found with username:777777
+2022-06-23 19:03:38.570 [WARN ] com.zaxxer.hikari.pool.HikariPool:run:788 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m43s351ms854탎400ns).
+2022-06-23 19:03:49.205 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/aabb
+2022-06-23 19:03:49.206 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 19:03:49.210 [ERROR] com.raxn.security.SecurityFilter:doFilterInternal:106 - invalid tokenJWT expired at 2022-06-23T18:44:52Z. Current time: 2022-06-23T19:03:49Z, a difference of 1137209 milliseconds.  Allowed clock skew: 0 milliseconds.
+2022-06-23 19:04:00.305 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1169 - Entered loginUser() -> Start
+2022-06-23 19:04:00.306 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1170 - identifier = 8073280884
+2022-06-23 19:04:00.306 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 19:04:00.306 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=8073280884
+2022-06-23 19:04:00.313 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 19:04:00.402 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1248 - isauthenticated=true
+2022-06-23 19:04:00.402 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:401 - Entered generateOTP() -> Start
+2022-06-23 19:04:00.403 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:402 - otpRequest=com.raxn.request.model.OTPModel@75dd7e6c[identifier=8073280884,mode=web,servicename=loginusr]
+2022-06-23 19:04:00.407 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:673 - OTP to set:621733
+2022-06-23 19:04:00.408 [INFO ] com.raxn.util.service.EmailSenderService:formatOTPEmail:137 - Entered into formatOTPEmail()
+2022-06-23 19:04:00.409 [INFO ] com.raxn.util.service.EmailSenderService:formatOTPEmail:138 - email=santosh@getnada.com ,purpose=OTP_mail
+2022-06-23 19:04:00.410 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:39 - Entered into sendEmail()
+2022-06-23 19:04:00.410 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:40 - tomail = santosh@getnada.com ,subject=OTP mail from RechargeAXN
+2022-06-23 19:04:05.296 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:55 - mail send done
+2022-06-23 19:04:05.296 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:56 - Exiting sendEmail()
+2022-06-23 19:04:21.132 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1267 - Entered nextLoginUser() -> Start
+2022-06-23 19:04:21.138 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1273 - Parameter verifyOTPRequest = {"servicename":"loginusr","identifier":"8073280884","mode":"web","otp":"621733","ipaddress":"49.37.73.153","deviceinfo":null,"browserinfo":null}
+2022-06-23 19:04:21.138 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:769 - Entered verifyOTP() -> Start
+2022-06-23 19:04:21.140 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:770 - verifyOTPRequest=com.raxn.request.model.VerifyOTPRequest@7fc0646[identifier=8073280884,mode=web,otp=621733,servicename=loginusr]
+2022-06-23 19:04:21.146 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:969 - differenceTS (in ms)=20739
+2022-06-23 19:04:21.147 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:983 - OTP matched & verified for identifier 8073280884
+2022-06-23 19:04:21.147 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1287 - OTP Verification status code = 200
+2022-06-23 19:04:21.148 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1291 - login OTP verification completed
+2022-06-23 19:04:21.154 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 19:04:21.154 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=8073280884
+2022-06-23 19:04:21.157 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 19:04:21.163 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1316 - full authenticated user::8073280884
+2022-06-23 19:04:21.164 [INFO ] com.raxn.service.impl.HomeServiceImpl:storeUserLoginInfo:1329 - Entered storeUserLoginInfo() -> Start
+2022-06-23 19:04:21.915 [INFO ] com.raxn.service.impl.HomeServiceImpl:storeUserLoginInfo:1341 - Response Code :: 200
+2022-06-23 19:04:51.969 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/aabb
+2022-06-23 19:04:51.970 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 19:04:51.976 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 19:04:51.977 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 19:04:51.984 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 19:28:33.781 [INFO ] org.hibernate.validator.internal.util.Version:<clinit>:21 - HV000001: Hibernate Validator 6.2.2.Final
+2022-06-23 19:28:33.794 [INFO ] com.raxn.RaxnProjectApplication:logStarting:55 - Starting RaxnProjectApplication using Java 1.8.0_301 on DESKTOP-CQ4QQNA with PID 2892 (C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject\target\classes started by talkn in C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject)
+2022-06-23 19:28:33.795 [INFO ] com.raxn.RaxnProjectApplication:logStartupProfileInfo:640 - No active profile set, falling back to 1 default profile: "default"
+2022-06-23 19:28:33.905 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-23 19:28:33.906 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-23 19:28:34.911 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-23 19:28:35.173 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:201 - Finished Spring Data repository scanning in 251 ms. Found 52 JPA repository interfaces.
+2022-06-23 19:28:36.083 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2022-06-23 19:28:36.095 [INFO ] org.apache.coyote.http11.Http11NioProtocol:log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2022-06-23 19:28:36.095 [INFO ] org.apache.catalina.core.StandardService:log:173 - Starting service [Tomcat]
+2022-06-23 19:28:36.096 [INFO ] org.apache.catalina.core.StandardEngine:log:173 - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-23 19:28:36.185 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/rechaxn]:log:173 - Initializing Spring embedded WebApplicationContext
+2022-06-23 19:28:36.185 [INFO ] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:prepareWebApplicationContext:290 - Root WebApplicationContext: initialization completed in 2278 ms
+2022-06-23 19:28:36.330 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:110 - HikariPool-1 - Starting...
+2022-06-23 19:28:36.557 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:123 - HikariPool-1 - Start completed.
+2022-06-23 19:28:36.669 [INFO ] org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-23 19:28:36.748 [INFO ] org.hibernate.Version:logVersion:44 - HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-06-23 19:28:36.942 [INFO ] org.hibernate.annotations.common.Version:<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-23 19:28:37.093 [INFO ] org.hibernate.dialect.Dialect:<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-06-23 19:28:38.875 [INFO ] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-23 19:28:38.886 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 19:28:40.214 [WARN ] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:openEntityManagerInViewInterceptor:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-23 19:28:40.887 [WARN ] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:refresh:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'adminController' method 
+com.raxn.controller.AdminController#postServiceIcon(Service)
+to {POST [/admin/addservice]}: There is already 'addUpdateController' bean method
+com.raxn.controller.AddUpdateController#addservice(EditServiceRequest) mapped.
+2022-06-23 19:28:40.895 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 19:28:40.899 [INFO ] com.zaxxer.hikari.HikariDataSource:close:350 - HikariPool-1 - Shutdown initiated...
+2022-06-23 19:28:40.908 [INFO ] com.zaxxer.hikari.HikariDataSource:close:352 - HikariPool-1 - Shutdown completed.
+2022-06-23 19:28:40.911 [INFO ] org.apache.catalina.core.StandardService:log:173 - Stopping service [Tomcat]
+2022-06-23 19:28:40.927 [INFO ] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:logMessage:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-06-23 19:28:40.958 [ERROR] org.springframework.boot.SpringApplication:reportFailure:830 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'adminController' method 
+com.raxn.controller.AdminController#postServiceIcon(Service)
+to {POST [/admin/addservice]}: There is already 'addUpdateController' bean method
+com.raxn.controller.AddUpdateController#addservice(EditServiceRequest) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.raxn.RaxnProjectApplication.main(RaxnProjectApplication.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'adminController' method 
+com.raxn.controller.AdminController#postServiceIcon(Service)
+to {POST [/admin/addservice]}: There is already 'addUpdateController' bean method
+com.raxn.controller.AddUpdateController#addservice(EditServiceRequest) mapped.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 26 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'adminController' method 
+com.raxn.controller.AdminController#postServiceIcon(Service)
+to {POST [/admin/addservice]}: There is already 'addUpdateController' bean method
+com.raxn.controller.AddUpdateController#addservice(EditServiceRequest) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1160)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer$MvcCorsFilter.getMvcCorsFilter(CorsConfigurer.java:111)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer$MvcCorsFilter.access$000(CorsConfigurer.java:94)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer.getCorsFilter(CorsConfigurer.java:89)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer.configure(CorsConfigurer.java:67)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer.configure(CorsConfigurer.java:41)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.configure(AbstractConfiguredSecurityBuilder.java:349)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:303)
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38)
+	at org.springframework.security.config.annotation.web.builders.WebSecurity.performBuild(WebSecurity.java:302)
+	at org.springframework.security.config.annotation.web.builders.WebSecurity.performBuild(WebSecurity.java:90)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:305)
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration.springSecurityFilterChain(WebSecurityConfiguration.java:127)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'adminController' method 
+com.raxn.controller.AdminController#postServiceIcon(Service)
+to {POST [/admin/addservice]}: There is already 'addUpdateController' bean method
+com.raxn.controller.AddUpdateController#addservice(EditServiceRequest) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:671)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1308)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:378)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.initHandlerMappings(HandlerMappingIntrospector.java:226)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.afterPropertiesSet(HandlerMappingIntrospector.java:115)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 52 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'adminController' method 
+com.raxn.controller.AdminController#postServiceIcon(Service)
+to {POST [/admin/addservice]}: There is already 'addUpdateController' bean method
+com.raxn.controller.AddUpdateController#addservice(EditServiceRequest) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:635)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:332)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:420)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:299)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:297)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:266)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:225)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:213)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 65 common frames omitted
+2022-06-23 19:30:41.626 [INFO ] com.raxn.RaxnProjectApplication:logStarting:55 - Starting RaxnProjectApplication using Java 1.8.0_301 on DESKTOP-CQ4QQNA with PID 13236 (C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject\target\classes started by talkn in C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject)
+2022-06-23 19:30:41.628 [INFO ] org.hibernate.validator.internal.util.Version:<clinit>:21 - HV000001: Hibernate Validator 6.2.2.Final
+2022-06-23 19:30:41.629 [INFO ] com.raxn.RaxnProjectApplication:logStartupProfileInfo:640 - No active profile set, falling back to 1 default profile: "default"
+2022-06-23 19:30:41.729 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-23 19:30:41.730 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-23 19:30:42.648 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-23 19:30:42.892 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:201 - Finished Spring Data repository scanning in 234 ms. Found 52 JPA repository interfaces.
+2022-06-23 19:30:43.775 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2022-06-23 19:30:43.786 [INFO ] org.apache.coyote.http11.Http11NioProtocol:log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2022-06-23 19:30:43.787 [INFO ] org.apache.catalina.core.StandardService:log:173 - Starting service [Tomcat]
+2022-06-23 19:30:43.787 [INFO ] org.apache.catalina.core.StandardEngine:log:173 - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-23 19:30:43.884 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/rechaxn]:log:173 - Initializing Spring embedded WebApplicationContext
+2022-06-23 19:30:43.885 [INFO ] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:prepareWebApplicationContext:290 - Root WebApplicationContext: initialization completed in 2154 ms
+2022-06-23 19:30:44.022 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:110 - HikariPool-1 - Starting...
+2022-06-23 19:30:44.212 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:123 - HikariPool-1 - Start completed.
+2022-06-23 19:30:44.353 [INFO ] org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-23 19:30:44.417 [INFO ] org.hibernate.Version:logVersion:44 - HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-06-23 19:30:44.615 [INFO ] org.hibernate.annotations.common.Version:<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-23 19:30:44.757 [INFO ] org.hibernate.dialect.Dialect:<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-06-23 19:30:46.389 [INFO ] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-23 19:30:46.400 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 19:30:47.705 [WARN ] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:openEntityManagerInViewInterceptor:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-23 19:30:48.510 [INFO ] org.springframework.security.web.DefaultSecurityFilterChain:<init>:52 - Will not secure any request
+2022-06-23 19:30:49.241 [INFO ] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:startServer:58 - LiveReload server is running on port 35729
+2022-06-23 19:30:49.276 [INFO ] org.apache.coyote.http11.Http11NioProtocol:log:173 - Starting ProtocolHandler ["http-nio-8080"]
+2022-06-23 19:30:49.309 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:start:220 - Tomcat started on port(s): 8080 (http) with context path '/rechaxn'
+2022-06-23 19:30:49.319 [INFO ] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor:finishRegistration:315 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2022-06-23 19:30:49.329 [INFO ] com.raxn.RaxnProjectApplication:logStarted:61 - Started RaxnProjectApplication in 8.197 seconds (JVM running for 9.262)
+2022-06-23 19:31:15.930 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/rechaxn]:log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-23 19:31:15.930 [INFO ] org.springframework.web.servlet.DispatcherServlet:initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+2022-06-23 19:31:15.932 [INFO ] org.springframework.web.servlet.DispatcherServlet:initServletBean:547 - Completed initialization in 2 ms
+2022-06-23 19:31:16.006 [INFO ] com.raxn.service.impl.DashboardServiceImpl:getOffers:203 - Entered getAllCouponsOffers() -> Start
+2022-06-23 19:31:16.007 [INFO ] com.raxn.service.impl.DashboardServiceImpl:getOffers:209 - Today date is 2022-06-23
+2022-06-23 19:31:16.076 [INFO ] com.raxn.service.impl.DashboardServiceImpl:getOffers:214 - No coupon offers available
+2022-06-23 19:31:50.154 [INFO ] com.raxn.service.impl.DashboardServiceImpl:getOffers:203 - Entered getAllCouponsOffers() -> Start
+2022-06-23 19:31:50.155 [INFO ] com.raxn.service.impl.DashboardServiceImpl:getOffers:209 - Today date is 2022-06-23
+2022-06-23 19:31:50.190 [INFO ] com.raxn.service.impl.DashboardServiceImpl:parseCoupons:225 - Entered parseCoupons() -> Start
+2022-06-23 19:32:37.628 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/userinfo
+2022-06-23 19:32:37.629 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 19:32:37.962 [ERROR] com.raxn.security.SecurityFilter:doFilterInternal:106 - invalid tokenJWT expired at 2022-06-23T18:44:52Z. Current time: 2022-06-23T19:32:37Z, a difference of 2865961 milliseconds.  Allowed clock skew: 0 milliseconds.
+2022-06-23 19:33:03.068 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/viewservices
+2022-06-23 19:33:03.069 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 19:33:03.075 [ERROR] com.raxn.security.SecurityFilter:doFilterInternal:106 - invalid tokenJWT expired at 2022-06-23T18:44:52Z. Current time: 2022-06-23T19:33:03Z, a difference of 2891074 milliseconds.  Allowed clock skew: 0 milliseconds.
+2022-06-23 19:33:37.443 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1169 - Entered loginUser() -> Start
+2022-06-23 19:33:37.444 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1170 - identifier = 8073280884
+2022-06-23 19:33:37.541 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 19:33:37.542 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=8073280884
+2022-06-23 19:33:37.552 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 19:33:37.645 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1248 - isauthenticated=true
+2022-06-23 19:33:37.645 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:401 - Entered generateOTP() -> Start
+2022-06-23 19:33:37.662 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:402 - otpRequest=com.raxn.request.model.OTPModel@4873f91b[identifier=8073280884,mode=web,servicename=loginusr]
+2022-06-23 19:33:37.704 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:673 - OTP to set:746592
+2022-06-23 19:33:37.711 [INFO ] com.raxn.util.service.EmailSenderService:formatOTPEmail:137 - Entered into formatOTPEmail()
+2022-06-23 19:33:37.711 [INFO ] com.raxn.util.service.EmailSenderService:formatOTPEmail:138 - email=santosh@getnada.com ,purpose=OTP_mail
+2022-06-23 19:33:37.766 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:39 - Entered into sendEmail()
+2022-06-23 19:33:37.766 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:40 - tomail = santosh@getnada.com ,subject=OTP mail from RechargeAXN
+2022-06-23 19:33:42.873 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:55 - mail send done
+2022-06-23 19:33:42.874 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:56 - Exiting sendEmail()
+2022-06-23 19:34:05.851 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1267 - Entered nextLoginUser() -> Start
+2022-06-23 19:34:05.863 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1273 - Parameter verifyOTPRequest = {"servicename":"loginusr","identifier":"8073280884","mode":"web","otp":"746592","ipaddress":"49.37.73.153","deviceinfo":null,"browserinfo":null}
+2022-06-23 19:34:05.869 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:769 - Entered verifyOTP() -> Start
+2022-06-23 19:34:05.869 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:770 - verifyOTPRequest=com.raxn.request.model.VerifyOTPRequest@41cf6f60[identifier=8073280884,mode=web,otp=746592,servicename=loginusr]
+2022-06-23 19:34:05.875 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:969 - differenceTS (in ms)=28188
+2022-06-23 19:34:05.875 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:983 - OTP matched & verified for identifier 8073280884
+2022-06-23 19:34:05.876 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1287 - OTP Verification status code = 200
+2022-06-23 19:34:05.876 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1291 - login OTP verification completed
+2022-06-23 19:34:05.882 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 19:34:05.883 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=8073280884
+2022-06-23 19:34:05.886 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 19:34:05.906 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1316 - full authenticated user::8073280884
+2022-06-23 19:34:05.908 [INFO ] com.raxn.service.impl.HomeServiceImpl:storeUserLoginInfo:1329 - Entered storeUserLoginInfo() -> Start
+2022-06-23 19:34:06.763 [INFO ] com.raxn.service.impl.HomeServiceImpl:storeUserLoginInfo:1341 - Response Code :: 200
+2022-06-23 19:34:35.763 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/aabb
+2022-06-23 19:34:35.765 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 19:34:35.815 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 19:34:35.816 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 19:34:35.823 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 19:34:46.785 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/viewservices
+2022-06-23 19:34:46.785 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 19:34:46.787 [ERROR] com.raxn.security.SecurityFilter:doFilterInternal:106 - invalid tokenJWT expired at 2022-06-23T18:44:52Z. Current time: 2022-06-23T19:34:46Z, a difference of 2994787 milliseconds.  Allowed clock skew: 0 milliseconds.
+2022-06-23 19:35:09.621 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/viewservices
+2022-06-23 19:35:09.622 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 19:35:09.626 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 19:35:09.626 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 19:35:09.629 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 19:35:09.645 [INFO ] com.raxn.service.impl.AddUpdateServiceImpl:viewservices:1011 - Entered viewservices() -> Start
+2022-06-23 19:35:09.653 [INFO ] com.raxn.service.impl.AddUpdateServiceImpl:viewservices:1014 - size of all services to display -> 3
+2022-06-23 19:35:37.508 [INFO ] com.raxn.service.impl.DashboardServiceImpl:getOffers:203 - Entered getAllCouponsOffers() -> Start
+2022-06-23 19:35:37.509 [INFO ] com.raxn.service.impl.DashboardServiceImpl:getOffers:209 - Today date is 2022-06-23
+2022-06-23 19:35:37.512 [INFO ] com.raxn.service.impl.DashboardServiceImpl:parseCoupons:225 - Entered parseCoupons() -> Start
+2022-06-23 19:36:01.611 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/userinfo
+2022-06-23 19:36:01.611 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 19:36:01.613 [ERROR] com.raxn.security.SecurityFilter:doFilterInternal:106 - invalid tokenJWT expired at 2022-05-28T13:13:06Z. Current time: 2022-06-23T19:36:01Z, a difference of 2269375613 milliseconds.  Allowed clock skew: 0 milliseconds.
+2022-06-23 19:36:11.263 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/userinfo
+2022-06-23 19:36:11.264 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 19:36:11.268 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 19:36:11.269 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 19:36:11.273 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 19:36:51.927 [INFO ] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:shutdown:159 - Application shutdown requested.
+2022-06-23 19:36:52.111 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 19:36:52.115 [INFO ] com.zaxxer.hikari.HikariDataSource:close:350 - HikariPool-1 - Shutdown initiated...
+2022-06-23 19:36:52.123 [INFO ] com.zaxxer.hikari.HikariDataSource:close:352 - HikariPool-1 - Shutdown completed.
+2022-06-23 19:38:44.599 [INFO ] org.hibernate.validator.internal.util.Version:<clinit>:21 - HV000001: Hibernate Validator 6.2.2.Final
+2022-06-23 19:38:44.616 [INFO ] com.raxn.RaxnProjectApplication:logStarting:55 - Starting RaxnProjectApplication using Java 1.8.0_301 on DESKTOP-CQ4QQNA with PID 16636 (C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject\target\classes started by talkn in C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject)
+2022-06-23 19:38:44.619 [INFO ] com.raxn.RaxnProjectApplication:logStartupProfileInfo:640 - No active profile set, falling back to 1 default profile: "default"
+2022-06-23 19:38:44.731 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-23 19:38:44.732 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-23 19:38:45.909 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-23 19:38:46.427 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:201 - Finished Spring Data repository scanning in 498 ms. Found 52 JPA repository interfaces.
+2022-06-23 19:38:47.628 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2022-06-23 19:38:47.644 [INFO ] org.apache.coyote.http11.Http11NioProtocol:log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2022-06-23 19:38:47.644 [INFO ] org.apache.catalina.core.StandardService:log:173 - Starting service [Tomcat]
+2022-06-23 19:38:47.645 [INFO ] org.apache.catalina.core.StandardEngine:log:173 - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-23 19:38:47.755 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/rechaxn]:log:173 - Initializing Spring embedded WebApplicationContext
+2022-06-23 19:38:47.757 [INFO ] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:prepareWebApplicationContext:290 - Root WebApplicationContext: initialization completed in 3024 ms
+2022-06-23 19:38:47.957 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:110 - HikariPool-1 - Starting...
+2022-06-23 19:38:48.194 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:123 - HikariPool-1 - Start completed.
+2022-06-23 19:38:48.373 [INFO ] org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-23 19:38:48.461 [INFO ] org.hibernate.Version:logVersion:44 - HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-06-23 19:38:48.731 [INFO ] org.hibernate.annotations.common.Version:<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-23 19:38:48.932 [INFO ] org.hibernate.dialect.Dialect:<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-06-23 19:38:51.033 [INFO ] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-23 19:38:51.048 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 19:38:52.803 [WARN ] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:openEntityManagerInViewInterceptor:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-23 19:38:53.813 [INFO ] org.springframework.security.web.DefaultSecurityFilterChain:<init>:52 - Will not secure any request
+2022-06-23 19:38:54.665 [INFO ] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:startServer:58 - LiveReload server is running on port 35729
+2022-06-23 19:38:54.705 [INFO ] org.apache.coyote.http11.Http11NioProtocol:log:173 - Starting ProtocolHandler ["http-nio-8080"]
+2022-06-23 19:38:54.741 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:start:220 - Tomcat started on port(s): 8080 (http) with context path '/rechaxn'
+2022-06-23 19:38:54.754 [INFO ] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor:finishRegistration:315 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2022-06-23 19:38:54.766 [INFO ] com.raxn.RaxnProjectApplication:logStarted:61 - Started RaxnProjectApplication in 10.674 seconds (JVM running for 11.768)
+2022-06-23 19:56:06.868 [INFO ] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:shutdown:159 - Application shutdown requested.
+2022-06-23 19:56:07.036 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 19:56:07.041 [INFO ] com.zaxxer.hikari.HikariDataSource:close:350 - HikariPool-1 - Shutdown initiated...
+2022-06-23 19:56:07.057 [INFO ] com.zaxxer.hikari.HikariDataSource:close:352 - HikariPool-1 - Shutdown completed.
+2022-06-23 20:10:46.895 [INFO ] org.hibernate.validator.internal.util.Version:<clinit>:21 - HV000001: Hibernate Validator 6.2.2.Final
+2022-06-23 20:10:46.919 [INFO ] com.raxn.RaxnProjectApplication:logStarting:55 - Starting RaxnProjectApplication using Java 1.8.0_301 on DESKTOP-CQ4QQNA with PID 6164 (C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject\target\classes started by talkn in C:\Users\talkn\Documents\SpringApp\RAXNProject\RAXNProject)
+2022-06-23 20:10:46.920 [INFO ] com.raxn.RaxnProjectApplication:logStartupProfileInfo:640 - No active profile set, falling back to 1 default profile: "default"
+2022-06-23 20:10:47.029 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-23 20:10:47.030 [INFO ] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:logTo:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-23 20:10:48.221 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-23 20:10:48.606 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate:registerRepositoriesIn:201 - Finished Spring Data repository scanning in 373 ms. Found 52 JPA repository interfaces.
+2022-06-23 20:10:49.907 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2022-06-23 20:10:49.930 [INFO ] org.apache.coyote.http11.Http11NioProtocol:log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2022-06-23 20:10:49.933 [INFO ] org.apache.catalina.core.StandardService:log:173 - Starting service [Tomcat]
+2022-06-23 20:10:49.934 [INFO ] org.apache.catalina.core.StandardEngine:log:173 - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-23 20:10:50.088 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/rechaxn]:log:173 - Initializing Spring embedded WebApplicationContext
+2022-06-23 20:10:50.089 [INFO ] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:prepareWebApplicationContext:290 - Root WebApplicationContext: initialization completed in 3058 ms
+2022-06-23 20:10:50.287 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:110 - HikariPool-1 - Starting...
+2022-06-23 20:10:50.572 [INFO ] com.zaxxer.hikari.HikariDataSource:getConnection:123 - HikariPool-1 - Start completed.
+2022-06-23 20:10:50.731 [INFO ] org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-23 20:10:50.835 [INFO ] org.hibernate.Version:logVersion:44 - HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-06-23 20:10:51.105 [INFO ] org.hibernate.annotations.common.Version:<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-23 20:10:51.301 [INFO ] org.hibernate.dialect.Dialect:<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-06-23 20:10:53.351 [INFO ] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-23 20:10:53.365 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 20:10:55.082 [WARN ] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:openEntityManagerInViewInterceptor:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-23 20:10:56.209 [INFO ] org.springframework.security.web.DefaultSecurityFilterChain:<init>:52 - Will not secure any request
+2022-06-23 20:10:57.368 [INFO ] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:startServer:58 - LiveReload server is running on port 35729
+2022-06-23 20:10:57.419 [INFO ] org.apache.coyote.http11.Http11NioProtocol:log:173 - Starting ProtocolHandler ["http-nio-8080"]
+2022-06-23 20:10:57.454 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:start:220 - Tomcat started on port(s): 8080 (http) with context path '/rechaxn'
+2022-06-23 20:10:57.467 [INFO ] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor:finishRegistration:315 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2022-06-23 20:10:57.483 [INFO ] com.raxn.RaxnProjectApplication:logStarted:61 - Started RaxnProjectApplication in 11.135 seconds (JVM running for 12.639)
+2022-06-23 20:11:28.352 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/rechaxn]:log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-23 20:11:28.352 [INFO ] org.springframework.web.servlet.DispatcherServlet:initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+2022-06-23 20:11:28.353 [INFO ] org.springframework.web.servlet.DispatcherServlet:initServletBean:547 - Completed initialization in 1 ms
+2022-06-23 20:11:28.546 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1169 - Entered loginUser() -> Start
+2022-06-23 20:11:28.547 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1170 - identifier = 8073280884
+2022-06-23 20:11:28.651 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 20:11:28.652 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=8073280884
+2022-06-23 20:11:28.716 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 20:11:28.814 [INFO ] com.raxn.service.impl.HomeServiceImpl:loginUser:1248 - isauthenticated=true
+2022-06-23 20:11:28.814 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:401 - Entered generateOTP() -> Start
+2022-06-23 20:11:28.831 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:402 - otpRequest=com.raxn.request.model.OTPModel@15c5da9a[identifier=8073280884,mode=web,servicename=loginusr]
+2022-06-23 20:11:28.889 [INFO ] com.raxn.service.impl.HomeServiceImpl:generateOTP:673 - OTP to set:123228
+2022-06-23 20:11:28.899 [INFO ] com.raxn.util.service.EmailSenderService:formatOTPEmail:137 - Entered into formatOTPEmail()
+2022-06-23 20:11:28.899 [INFO ] com.raxn.util.service.EmailSenderService:formatOTPEmail:138 - email=santosh@getnada.com ,purpose=OTP_mail
+2022-06-23 20:11:28.945 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:39 - Entered into sendEmail()
+2022-06-23 20:11:28.946 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:40 - tomail = santosh@getnada.com ,subject=OTP mail from RechargeAXN
+2022-06-23 20:11:33.694 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:55 - mail send done
+2022-06-23 20:11:33.694 [INFO ] com.raxn.util.service.EmailSenderService:sendEmail:56 - Exiting sendEmail()
+2022-06-23 20:12:02.133 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1267 - Entered nextLoginUser() -> Start
+2022-06-23 20:12:02.155 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1273 - Parameter verifyOTPRequest = {"servicename":"loginusr","identifier":"8073280884","mode":"web","otp":"123228","ipaddress":"49.37.73.153","deviceinfo":null,"browserinfo":null}
+2022-06-23 20:12:02.161 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:769 - Entered verifyOTP() -> Start
+2022-06-23 20:12:02.161 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:770 - verifyOTPRequest=com.raxn.request.model.VerifyOTPRequest@460c3a15[identifier=8073280884,mode=web,otp=123228,servicename=loginusr]
+2022-06-23 20:12:02.171 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:969 - differenceTS (in ms)=33304
+2022-06-23 20:12:02.171 [INFO ] com.raxn.service.impl.HomeServiceImpl:verifyOTP:983 - OTP matched & verified for identifier 8073280884
+2022-06-23 20:12:02.172 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1287 - OTP Verification status code = 200
+2022-06-23 20:12:02.173 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1291 - login OTP verification completed
+2022-06-23 20:12:02.177 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 20:12:02.178 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=8073280884
+2022-06-23 20:12:02.180 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 20:12:02.241 [INFO ] com.raxn.service.impl.HomeServiceImpl:nextLoginUser:1316 - full authenticated user::8073280884
+2022-06-23 20:12:02.243 [INFO ] com.raxn.service.impl.HomeServiceImpl:storeUserLoginInfo:1329 - Entered storeUserLoginInfo() -> Start
+2022-06-23 20:12:03.175 [INFO ] com.raxn.service.impl.HomeServiceImpl:storeUserLoginInfo:1341 - Response Code :: 200
+2022-06-23 20:12:47.506 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/userinfo
+2022-06-23 20:12:47.507 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 20:12:47.571 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 20:12:47.571 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 20:12:47.576 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 20:13:10.139 [INFO ] com.raxn.service.impl.DashboardServiceImpl:getOffers:203 - Entered getAllCouponsOffers() -> Start
+2022-06-23 20:13:10.139 [INFO ] com.raxn.service.impl.DashboardServiceImpl:getOffers:209 - Today date is 2022-06-23
+2022-06-23 20:13:10.156 [INFO ] com.raxn.service.impl.DashboardServiceImpl:parseCoupons:225 - Entered parseCoupons() -> Start
+2022-06-23 20:13:44.212 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/viewservices
+2022-06-23 20:13:44.213 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 20:13:44.222 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 20:13:44.222 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 20:13:44.227 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 20:13:44.238 [INFO ] com.raxn.service.impl.AddUpdateServiceImpl:viewservices:1011 - Entered viewservices() -> Start
+2022-06-23 20:13:44.248 [INFO ] com.raxn.service.impl.AddUpdateServiceImpl:viewservices:1014 - size of all services to display -> 3
+2022-06-23 20:14:25.691 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/admin/viewservices
+2022-06-23 20:14:25.691 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 20:14:25.695 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:24 - Entered loadUserByUsername() -> Start
+2022-06-23 20:14:25.695 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:25 - username=0yZc-RGcR-kyWC-816g
+2022-06-23 20:14:25.699 [INFO ] com.raxn.security.CustomUserDetailsService:loadUserByUsername:37 - user=santosh@getnada.com
+2022-06-23 20:14:56.761 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:43 - uri=/rechaxn/userinfo
+2022-06-23 20:14:56.762 [INFO ] com.raxn.security.SecurityFilter:doFilterInternal:55 - requestTokenHeader=Bearer eyJhbGciOi
+2022-06-23 20:14:56.765 [ERROR] com.raxn.security.SecurityFilter:doFilterInternal:106 - invalid tokenJWT expired at 2022-05-28T13:13:06Z. Current time: 2022-06-23T20:14:56Z, a difference of 2271710764 milliseconds.  Allowed clock skew: 0 milliseconds.
+2022-06-23 20:18:11.920 [INFO ] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:shutdown:159 - Application shutdown requested.
+2022-06-23 20:18:12.070 [INFO ] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 20:18:12.079 [INFO ] com.zaxxer.hikari.HikariDataSource:close:350 - HikariPool-1 - Shutdown initiated...
+2022-06-23 20:18:12.097 [INFO ] com.zaxxer.hikari.HikariDataSource:close:352 - HikariPool-1 - Shutdown completed.

@@ -14,7 +14,7 @@ public class ChangePwdRequest {
 	private String mode;
 
 	@NotBlank
-	private String userid;
+	private String username;
 
 	public String getOldpassword() {
 		return oldpassword;
@@ -40,12 +40,12 @@ public class ChangePwdRequest {
 		this.mode = mode;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

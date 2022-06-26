@@ -12,7 +12,7 @@ public interface RchBroadbandLandlineRepository extends JpaRepository<RchBroadba
 
 	List<RchBroadbandLandline> findByUserid(String userid);
 
-	@Query("FROM RchBroadbandLandline WHERE userid is ?1 AND dateTime between ?2 And ?3")
-	List<RchBroadbandLandline> findByDateTime(String userid, Date pastDate, Date currentDate);
+	@Query("FROM RchBroadbandLandline WHERE useusernamerid is ?1 AND dateTime between ?2 And ?3")
+	List<RchBroadbandLandline> findByDateTime(String username, Date pastDate, Date currentDate);
 
 }

@@ -35,7 +35,7 @@ public class RewardPoints implements Serializable {
 	private int id;
 
 	@NotBlank
-	private String userid;
+	private String username;
 	private String activity;
 	private double debit;
 	private double credit;
@@ -56,12 +56,12 @@ public class RewardPoints implements Serializable {
 		this.id = id;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getActivity() {

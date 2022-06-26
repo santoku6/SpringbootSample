@@ -2,10 +2,12 @@ package com.raxn.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -21,6 +23,8 @@ public class Faq implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@NotBlank
+	@Column(unique = true)
 	private String header;
 
 	public int getId() {

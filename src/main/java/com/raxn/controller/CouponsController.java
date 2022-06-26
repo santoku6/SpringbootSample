@@ -15,40 +15,36 @@ import com.raxn.service.CouponsService;
 @RestController
 @RequestMapping("/coupons")
 public class CouponsController {
-	
+
 	@Autowired
 	private CouponsService couponsService;
-	
+
 	@GetMapping("/all")
 	public ResponseEntity<String> getAllCoupons() throws JsonProcessingException {
 		ResponseEntity<String> response = couponsService.getAllCoupons();
 		return new ResponseEntity<String>(response.getBody(), response.getStatusCode());
-		
+
 	}
-	
-	@GetMapping("/{code}")
+
+	@GetMapping("/code/{code}")
 	public ResponseEntity<String> getCouponsByCode(@PathVariable String code) throws JsonProcessingException {
 		ResponseEntity<String> response = couponsService.getCouponsByCode(code);
 		return new ResponseEntity<String>(response.getBody(), response.getStatusCode());
 	}
-	
-	@GetMapping("/offers")
-	public ResponseEntity<String> getAllCouponsOffers() throws JsonProcessingException {
-		ResponseEntity<String> response = couponsService.getAllCouponsOffers();
-		return new ResponseEntity<String>(response.getBody(), response.getStatusCode());
-	}
-	
+
 	@GetMapping("/offers/{category}")
-	public ResponseEntity<String> getCouponsOffersByCategory(@PathVariable String category) throws JsonProcessingException {
+	public ResponseEntity<String> getCouponsOffersByCategory(@PathVariable String category)
+			throws JsonProcessingException {
 		ResponseEntity<String> response = couponsService.getCouponsOffersByCategory(category);
 		return new ResponseEntity<String>(response.getBody(), response.getStatusCode());
 	}
-	
-	@GetMapping("/check")
-	public ResponseEntity<String> checkCouponEligibility(@RequestBody CouponCheckRequest ccRequest) throws JsonProcessingException {
+
+	// check user eligibility against wallet coupon
+	@GetMapping("/checkwalletcode")
+	public ResponseEntity<String> checkCouponEligibility(@RequestBody CouponCheckRequest ccRequest)
+			throws JsonProcessingException {
 		ResponseEntity<String> response = couponsService.checkCouponEligibility(ccRequest);
 		return new ResponseEntity<String>(response.getBody(), response.getStatusCode());
 	}
-	
 
 }

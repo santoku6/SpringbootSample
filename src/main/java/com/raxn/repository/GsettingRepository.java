@@ -6,7 +6,7 @@ import com.raxn.entity.Gsetting;
 
 public interface GsettingRepository extends JpaRepository<Gsetting, Integer>{
 	
-	Gsetting findByName(String name);
+	Gsetting findById(int id);
 	
 
 }

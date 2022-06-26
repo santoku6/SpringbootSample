@@ -23,7 +23,7 @@ public class UserRequest {
 	private String mode;
 	
 	@NotBlank
-	private String servicename;//register
+	private String servicename;//signupusr
 	
 	@NotBlank
 	private String userip;//ip address

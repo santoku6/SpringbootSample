@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,12 +32,12 @@ public class Wallet implements Serializable {
 	private static final long serialVersionUID = -4882066856075508431L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@NotBlank
 	@Column(unique = true)
-	private String userid;
+	private String username;
 
 	private String orderid;
 	private String remark;
@@ -67,12 +68,12 @@ public class Wallet implements Serializable {
 		this.id = id;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getOrderid() {

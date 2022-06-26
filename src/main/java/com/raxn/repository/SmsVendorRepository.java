@@ -6,5 +6,5 @@ import com.raxn.entity.SmsVendor;
 
 public interface SmsVendorRepository extends JpaRepository<SmsVendor, Integer>{
 	
-
+	SmsVendor findById(int id);
 }

@@ -10,7 +10,7 @@ public interface WalletRepository extends JpaRepository<Wallet, Integer>{
 	
 	
 	Wallet findById(String id);	
-	List<Wallet> findByUserid(String userid);
+	List<Wallet> findByUsername(String username);
 	
 	
 	

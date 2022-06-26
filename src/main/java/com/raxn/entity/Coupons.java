@@ -1,13 +1,16 @@
 package com.raxn.entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
@@ -32,7 +35,7 @@ public class Coupons implements Serializable, Cloneable {
 	private static final long serialVersionUID = -9022062908075762940L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@NotBlank
@@ -42,13 +45,14 @@ public class Coupons implements Serializable, Cloneable {
 	@NotNull
 	private int eligibleAmount; // amount for which coupon(instant/recurring) can be applied
 
-	private int eligibleMinAmountPercent; // amount for which coupon(percent) can be applied
+	// private int eligibleMinAmountPercent; // amount for which coupon(percent) can
+	// be applied
 
 	@NotBlank
-	private String couponCategory;// list - wallet,recharge/dth,bills,giftcards
+	private String category;// list - wallet,recharge/dth,bills,giftcards
 
 	@NotBlank
-	private String couponType;// instant/recurring/percent
+	private String type;// instant/recurring/percent
 
 	private int instantCashbackWebMode;// instant cashback(amount) for web mode after coupon apply
 	private int instantCashbackAppMode;// instant cashback(amount) for app mode after coupon apply
@@ -63,15 +67,20 @@ public class Coupons implements Serializable, Cloneable {
 	private int minBalance;// min amount to keep in account to get cashback(only for recurring type)
 
 	@NotNull
-	private int couponUseTime;// number of times a user can apply any coupon
+	private int usetime;// number of times a user can apply any coupon
 
-	private Date startDate;// coupon start date
-	private Date endDate;// coupon end date
-	private String status;// coupon status(1=active,0=inactive)
+	private LocalDate startDate;// coupon start date
+	private LocalDate endDate;// coupon end date
+	private LocalDate cbStartdate;// cashback start date for recurring coupon
+	private LocalDate cbEnddate;// cashback end date for recurring coupon
+	private String status;// coupon status(0=inactive,1=active,2=completed)
 	private String email;// user email for which a coupon can be applied(special case)
-	private String couponDescription;// coupon description/title
-	private String termsAndConditions;// coupon terms & condition
-	private String mode;// web or app mode
+	private String description;// coupon description/title
+
+	@Lob
+	private String tnc;// coupon terms & condition
+
+	private String couponmode;// web or app mode
 
 	@Column(nullable = false, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -107,28 +116,20 @@ public class Coupons implements Serializable, Cloneable {
 		this.eligibleAmount = eligibleAmount;
 	}
 
-	public int getEligibleMinAmountPercent() {
-		return eligibleMinAmountPercent;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setEligibleMinAmountPercent(int eligibleMinAmountPercent) {
-		this.eligibleMinAmountPercent = eligibleMinAmountPercent;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
-	public String getCouponCategory() {
-		return couponCategory;
+	public String getType() {
+		return type;
 	}
 
-	public void setCouponCategory(String couponCategory) {
-		this.couponCategory = couponCategory;
-	}
-
-	public String getCouponType() {
-		return couponType;
-	}
-
-	public void setCouponType(String couponType) {
-		this.couponType = couponType;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public int getInstantCashbackWebMode() {
@@ -219,28 +220,44 @@ public class Coupons implements Serializable, Cloneable {
 		this.minBalance = minBalance;
 	}
 
-	public int getCouponUseTime() {
-		return couponUseTime;
+	public int getUsetime() {
+		return usetime;
 	}
 
-	public void setCouponUseTime(int couponUseTime) {
-		this.couponUseTime = couponUseTime;
+	public void setUsetime(int usetime) {
+		this.usetime = usetime;
 	}
 
-	public Date getStartDate() {
+	public LocalDate getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate() {
+	public LocalDate getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
+	}
+
+	public LocalDate getCbStartdate() {
+		return cbStartdate;
+	}
+
+	public void setCbStartdate(LocalDate cbStartdate) {
+		this.cbStartdate = cbStartdate;
+	}
+
+	public LocalDate getCbEnddate() {
+		return cbEnddate;
+	}
+
+	public void setCbEnddate(LocalDate cbEnddate) {
+		this.cbEnddate = cbEnddate;
 	}
 
 	public String getStatus() {
@@ -259,28 +276,28 @@ public class Coupons implements Serializable, Cloneable {
 		this.email = email;
 	}
 
-	public String getCouponDescription() {
-		return couponDescription;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setCouponDescription(String couponDescription) {
-		this.couponDescription = couponDescription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public String getTermsAndConditions() {
-		return termsAndConditions;
+	public String getTnc() {
+		return tnc;
 	}
 
-	public void setTermsAndConditions(String termsAndConditions) {
-		this.termsAndConditions = termsAndConditions;
+	public void setTnc(String tnc) {
+		this.tnc = tnc;
 	}
 
-	public String getMode() {
-		return mode;
+	public String getCouponmode() {
+		return couponmode;
 	}
 
-	public void setMode(String mode) {
-		this.mode = mode;
+	public void setCouponmode(String couponmode) {
+		this.couponmode = couponmode;
 	}
 
 	public Date getCreatedAt() {
@@ -299,7 +316,4 @@ public class Coupons implements Serializable, Cloneable {
 		this.updatedAt = updatedAt;
 	}
 
-	public Coupons clone() throws CloneNotSupportedException {
-		return (Coupons) super.clone();
-	}
 }

@@ -12,7 +12,7 @@ public interface RchFastagRepository extends JpaRepository<RchFastag, Integer> {
 
 	List<RchFastag> findByUserid(String userid);
 
-	@Query("FROM RchFastag WHERE userid is ?1 AND dateTime between ?2 And ?3")
-	List<RchFastag> findByDateTime(String userid, Date pastDate, Date currentDate);
+	@Query("FROM RchFastag WHERE username is ?1 AND dateTime between ?2 And ?3")
+	List<RchFastag> findByDateTime(String username, Date pastDate, Date currentDate);
 
 }

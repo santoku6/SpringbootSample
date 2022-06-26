@@ -12,6 +12,9 @@ public class ResetPWDRequest {
 	
 	@NotBlank
 	private String password;
+	
+	@NotBlank
+	private String servicename;//resetpwd
 
 	public String getIdentifier() {
 		return identifier;
@@ -35,6 +38,14 @@ public class ResetPWDRequest {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getServicename() {
+		return servicename;
+	}
+
+	public void setServicename(String servicename) {
+		this.servicename = servicename;
 	}
 
 }

@@ -11,7 +11,10 @@ public class ChangeMobileRequest {
 	private String mode;
 
 	@NotBlank
-	private String userid;
+	private String username;
+	
+	@NotBlank
+	private String servicename;
 
 	public String getNewmobile() {
 		return newmobile;
@@ -29,12 +32,20 @@ public class ChangeMobileRequest {
 		this.mode = mode;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getServicename() {
+		return servicename;
+	}
+
+	public void setServicename(String servicename) {
+		this.servicename = servicename;
 	}
 
 }

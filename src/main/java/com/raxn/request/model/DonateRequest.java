@@ -5,7 +5,7 @@ import javax.validation.constraints.NotBlank;
 public class DonateRequest {
 
 	@NotBlank
-	private String userid;
+	private String username;
 
 	@NotBlank
 	private String amount;
@@ -13,12 +13,12 @@ public class DonateRequest {
 	@NotBlank
 	private String mode;
 
-	public String getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getAmount() {

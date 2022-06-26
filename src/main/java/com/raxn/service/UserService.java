@@ -1,5 +1,9 @@
 package com.raxn.service;
 
-public interface UserService {
+import org.springframework.http.ResponseEntity;
 
+import com.raxn.request.model.AddMoneyRequest;
+
+public interface UserService {
+	ResponseEntity<String> addmoney(AddMoneyRequest addmoneyRequest);
 }

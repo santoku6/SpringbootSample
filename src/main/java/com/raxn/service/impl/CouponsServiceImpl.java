@@ -1,5 +1,6 @@
 package com.raxn.service.impl;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,12 +19,13 @@ import org.springframework.transaction.annotation.Transactional;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
-import com.raxn.entity.CouponApplied;
+import com.raxn.entity.CouponAppliedUser;
 import com.raxn.entity.Coupons;
 import com.raxn.entity.User;
-import com.raxn.repository.CouponAppliedRepository;
+import com.raxn.repository.CouponAppliedUserRepository;
 import com.raxn.repository.CouponsRepository;
 import com.raxn.repository.UserRepository;
+import com.raxn.request.model.AddMoneyRequest;
 import com.raxn.request.model.CouponCheckRequest;
 import com.raxn.request.model.CouponsDisplay;
 import com.raxn.service.CouponsService;
@@ -44,10 +46,13 @@ public class CouponsServiceImpl implements CouponsService {
 	CouponsRepository couponsrepo;
 
 	@Autowired
+	CouponAppliedUserRepository couponAppliedRepo;
+
+	@Autowired
 	UserRepository userrepo;
 
 	@Autowired
-	CouponAppliedRepository couponappliedrepo;
+	CouponAppliedUserRepository couponappliedrepo;
 
 	private static String successStatus = "Success";
 	private static String errorStatus = "Error";
@@ -61,8 +66,8 @@ public class CouponsServiceImpl implements CouponsService {
 		List<Coupons> couponsObj = couponsrepo.findAll();
 		if (couponsObj.isEmpty() || couponsObj.size() == 0) {
 			response.put(AppConstant.STATUS, errorStatus);
-			response.put(AppConstant.MESSAGE, "No active coupons found in database");
-			LOGGER.error("No active coupons found in database");
+			response.put(AppConstant.MESSAGE, "No active coupons found");
+			LOGGER.error("No active coupons found");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.NOT_FOUND);
 		}
 		LOGGER.info("All active coupons are -> " + objMapper.writeValueAsString(couponsObj));
@@ -75,7 +80,7 @@ public class CouponsServiceImpl implements CouponsService {
 		ObjectMapper objMapper = new ObjectMapper();
 		JSONObject response = new JSONObject();
 
-		List<Coupons> couponObj = couponsrepo.findByCode(code);
+		List<Coupons> couponObj = couponsrepo.findByCode(code.toUpperCase());
 		if (couponObj.isEmpty() || couponObj.size() == 0) {
 			response.put(AppConstant.STATUS, errorStatus);
 			response.put(AppConstant.MESSAGE, "No coupon found with code " + code + " in database");
@@ -93,46 +98,6 @@ public class CouponsServiceImpl implements CouponsService {
 
 		LOGGER.info("Coupon with " + code + " is -> " + objMapper.writeValueAsString(coupon));
 		return new ResponseEntity<String>(objMapper.writeValueAsString(coupon), HttpStatus.OK);
-	}
-
-	@Override
-	public ResponseEntity<String> getAllCouponsOffers() throws JsonProcessingException {
-		LOGGER.info("Entered getAllCouponsOffers() -> Start");
-		ObjectMapper objMapper = new ObjectMapper();
-		JSONObject response = new JSONObject();
-
-		Date dd = java.sql.Date.valueOf(java.time.LocalDate.now());
-		LOGGER.info("Today date is " + dd);
-		List<Coupons> couponslist = couponsrepo.findAllOffers(dd);
-		if (couponslist.isEmpty() || couponslist.size() == 0) {
-			response.put(AppConstant.STATUS, errorStatus);
-			response.put(AppConstant.MESSAGE, "No coupon offers available");
-			LOGGER.error("No coupon offers available");
-			return new ResponseEntity<String>(response.toString(), HttpStatus.NOT_FOUND);
-		}
-		LOGGER.info("size of All coupon offers -> " + couponslist.size());
-		LOGGER.info("All coupon offers are -> " + objMapper.writeValueAsString(couponslist));
-
-		List<CouponsDisplay> newList = parseCoupons(couponslist);
-		LOGGER.info("size of new coupon list -> " + newList.size());
-		LOGGER.info("coupon offers are -> " + objMapper.writeValueAsString(newList));
-		return new ResponseEntity<String>(new Gson().toJson(newList), HttpStatus.OK);
-	}
-
-	private List<CouponsDisplay> parseCoupons(List<Coupons> couponslist) {
-		LOGGER.info("Entered parseCoupons() -> Start");
-		List<CouponsDisplay> newList = new ArrayList<CouponsDisplay>();
-		for (Coupons c : couponslist) {
-			String[] c_categories = c.getCouponCategory().split(",");
-			for (int i = 0; i < c_categories.length; i++) {
-				CouponsDisplay temp = new CouponsDisplay();
-				BeanUtils.copyProperties(c, temp);
-				temp.setCouponCategory(c_categories[i]);
-				newList.add(temp);
-			}
-		}
-		LOGGER.info("returning new coupons list of size:" + newList.size());
-		return newList;
 	}
 
 	@Override
@@ -156,7 +121,7 @@ public class CouponsServiceImpl implements CouponsService {
 			}
 		}
 
-		Date dd = java.sql.Date.valueOf(java.time.LocalDate.now());
+		LocalDate dd = LocalDate.now();
 		LOGGER.info("Today date is " + dd);
 		List<Coupons> couponslist = couponsrepo.findAllOffers(dd);
 		if (couponslist.isEmpty() || couponslist.size() == 0) {
@@ -178,13 +143,14 @@ public class CouponsServiceImpl implements CouponsService {
 		LOGGER.info("Entered parseCouponsByCategory() -> Start");
 		LOGGER.info("Parameter category=" + category);
 		List<CouponsDisplay> newList = new ArrayList<CouponsDisplay>();
-		for (Coupons c : couponslist) {
-			String[] c_categories = c.getCouponCategory().split(",");
+		for (Coupons coupon : couponslist) {
+			String couponCategory = coupon.getCategory();
+			couponCategory = couponCategory.substring(1, couponCategory.length() - 1);	
+			String[] c_categories = coupon.getCategory().split(",");
 			for (int i = 0; i < c_categories.length; i++) {
 				if (c_categories[i].equalsIgnoreCase(category)) {
 					CouponsDisplay temp = new CouponsDisplay();
-					BeanUtils.copyProperties(c, temp);
-					temp.setCouponCategory(c_categories[i]);
+					BeanUtils.copyProperties(coupon, temp);
 					newList.add(temp);
 				}
 			}
@@ -193,19 +159,21 @@ public class CouponsServiceImpl implements CouponsService {
 		return newList;
 	}
 
+	/**
+	 * check coupon eligibility for a user
+	 */
 	@Override
 	public ResponseEntity<String> checkCouponEligibility(CouponCheckRequest ccRequest) throws JsonProcessingException {
 		LOGGER.info("Entered checkCouponEligibility() -> Start");
 		ObjectMapper objMapper = new ObjectMapper();
 		JSONObject response = new JSONObject();
 		LOGGER.info("couponRequest=" + ReflectionToStringBuilder.toString(ccRequest));
-		int userInt = 0;
 		double amountDbl = 0.0;
 
-		if (null == ccRequest.getUserid() || ccRequest.getUserid().isEmpty()) {
+		if (null == ccRequest.getUsername() || ccRequest.getUsername().isEmpty()) {
 			response.put(AppConstant.STATUS, errorStatus);
-			response.put(AppConstant.MESSAGE, "Userid is null or empty");
-			LOGGER.error("Userid is null or incorrect");
+			response.put(AppConstant.MESSAGE, "Username is null or empty");
+			LOGGER.error("Username is null or incorrect");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 		}
 		if (null == ccRequest.getAmount() || ccRequest.getAmount().isEmpty()) {
@@ -215,34 +183,19 @@ public class CouponsServiceImpl implements CouponsService {
 			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 
 		}
-		String userid = ccRequest.getUserid().trim();
+		String username = ccRequest.getUsername().trim();
 		String amount = ccRequest.getAmount().trim();
 
 		try {
-			userInt = Integer.parseInt(userid);
 			amountDbl = Double.parseDouble(amount);
 		} catch (NumberFormatException e) {
-			LOGGER.error(e.getMessage(), e);
+			LOGGER.error(e.getMessage());
 			response.put(AppConstant.STATUS, errorStatus);
-			response.put(AppConstant.MESSAGE, "Userid or amount is not correct");
-			LOGGER.error("Userid or amount is not correct");
+			response.put(AppConstant.MESSAGE, "amount is not correct");
+			LOGGER.error("amount is not correct");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 		}
 
-		if (userInt <= 0) {
-			response.put(AppConstant.STATUS, errorStatus);
-			response.put(AppConstant.MESSAGE, "userid is invalid");
-			LOGGER.error("userid is invalid");
-			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
-
-		}
-		if (amountDbl > 5000) {
-			response.put(AppConstant.STATUS, errorStatus);
-			response.put(AppConstant.MESSAGE, "max allowed amount is Rs 5000");
-			LOGGER.error("max allowed amount is Rs 5000");
-			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
-
-		}
 		if (null == ccRequest.getCode() || ccRequest.getCode().isEmpty()) {
 			response.put(AppConstant.STATUS, errorStatus);
 			response.put(AppConstant.MESSAGE, "code is empty or null");
@@ -251,18 +204,22 @@ public class CouponsServiceImpl implements CouponsService {
 		}
 		if (null == ccRequest.getCategory() || ccRequest.getCategory().isEmpty()) {
 			response.put(AppConstant.STATUS, errorStatus);
-			response.put(AppConstant.MESSAGE, "category is empty or null");
-			LOGGER.error("category is empty or null");
+			response.put(AppConstant.MESSAGE, "coupon category is empty or null");
+			LOGGER.error("coupon category is empty or null");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 		}
-		if (null != ccRequest.getCategory() && !ccRequest.getCategory().isEmpty()) {
-			if (!CommonServiceUtil.checkCouponCategory(ccRequest.getCategory().trim())) {
-				response.put(AppConstant.STATUS, errorStatus);
-				response.put(AppConstant.MESSAGE, "category is incorrect");
-				LOGGER.error("category is incorrect");
-				return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
-			}
+
+		if (null != ccRequest.getCategory() && !ccRequest.getCategory().isEmpty()
+				&& !(ccRequest.getCategory().equalsIgnoreCase(AppConstant.UTILITY)
+						|| ccRequest.getCategory().equalsIgnoreCase(AppConstant.RECHARGE)
+						|| ccRequest.getCategory().equalsIgnoreCase(AppConstant.GIFTCARD)
+						|| ccRequest.getCategory().equalsIgnoreCase(AppConstant.WALLET))) {
+			response.put(AppConstant.STATUS, errorStatus);
+			response.put(AppConstant.MESSAGE, "coupon category is incorrect");
+			LOGGER.error("coupon category is incorrect");
+			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 		}
+
 		if (null == ccRequest.getMode() || ccRequest.getMode().isEmpty()) {
 			response.put(AppConstant.STATUS, errorStatus);
 			response.put(AppConstant.MESSAGE, "mode is empty or null");
@@ -278,13 +235,24 @@ public class CouponsServiceImpl implements CouponsService {
 			}
 		}
 
-		Date dd = java.sql.Date.valueOf(java.time.LocalDate.now());
+		// Date dd = java.sql.Date.valueOf(java.time.LocalDate.now());
+		LocalDate dd = LocalDate.now();
 		LOGGER.info("Today date is " + dd);
 		String code = ccRequest.getCode().trim();
 		String category = ccRequest.getCategory().trim();
 		String mode = ccRequest.getMode().trim();
 
-		List<Coupons> couponslist = couponsrepo.findByCode(code);
+		if (category.equalsIgnoreCase(AppConstant.WALLET)) {
+			if (amountDbl > 5000) {
+				response.put(AppConstant.STATUS, errorStatus);
+				response.put(AppConstant.MESSAGE, "max allowed amount is Rs 5000");
+				LOGGER.error("max allowed amount is Rs 5000");
+				return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
+
+			}
+		}
+
+		List<Coupons> couponslist = couponsrepo.findByCode(code.toUpperCase());
 		if (couponslist.isEmpty() || couponslist.size() == 0) {
 			response.put(AppConstant.STATUS, errorStatus);
 			response.put(AppConstant.MESSAGE, "coupon is invalid");
@@ -297,11 +265,14 @@ public class CouponsServiceImpl implements CouponsService {
 			LOGGER.error("multiple coupons found with code");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.NOT_FOUND);
 		}
+		// get coupon info from DB
 		Coupons coupon = couponslist.get(0);
 		LOGGER.info("Coupon info--" + objMapper.writeValueAsString(coupon));
 
-		User userInfo = userrepo.findById(userInt);
-		CouponApplied couponApplied = couponappliedrepo.findByUserid(userid);
+		// get userinfo from DB
+		User userInfo = userrepo.findByUsername(username);
+		// get all codes used by user from DB
+		CouponAppliedUser couponApplied = couponappliedrepo.findByUsername(username);
 
 		if (null == userInfo) {
 			response.put(AppConstant.STATUS, errorStatus);
@@ -309,13 +280,21 @@ public class CouponsServiceImpl implements CouponsService {
 			LOGGER.error("user is not registered");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 		}
-		if (dd.before(coupon.getStartDate()) || dd.after(coupon.getEndDate())) {
+		if (coupon.getStatus().equalsIgnoreCase("inactive")) {
+			response.put(AppConstant.STATUS, errorStatus);
+			response.put(AppConstant.MESSAGE, "coupon is not active");
+			LOGGER.error("coupon is not active");
+			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
+		}
+		if (dd.isBefore(coupon.getStartDate()) || dd.isAfter(coupon.getEndDate())) {
 			response.put(AppConstant.STATUS, errorStatus);
 			response.put(AppConstant.MESSAGE, "coupon is expired");
 			LOGGER.error("coupon is expired");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 		}
-		if (null != coupon.getMode() && !coupon.getMode().isEmpty() && !mode.equalsIgnoreCase(coupon.getMode())) {
+		if (null != coupon.getCouponmode() && !coupon.getCouponmode().isEmpty()
+				&& !(mode.equalsIgnoreCase(coupon.getCouponmode())
+						|| coupon.getCouponmode().equalsIgnoreCase("both"))) {
 			response.put(AppConstant.STATUS, errorStatus);
 			response.put(AppConstant.MESSAGE, "coupon is not applicable on this platform");
 			LOGGER.error("coupon is not applicable on this platform");
@@ -336,7 +315,8 @@ public class CouponsServiceImpl implements CouponsService {
 			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 		}
 
-		String couponCategory = coupon.getCouponCategory();
+		userInfo = null;
+		String couponCategory = coupon.getCategory();
 
 		List<String> categorylist = ConvertUtil.convertCategoryToList(couponCategory);
 
@@ -347,29 +327,77 @@ public class CouponsServiceImpl implements CouponsService {
 			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 		}
 
-		String userAppliedSuccessCouponsList = couponApplied.getSuccessCouponInfo();
+		String userAppliedSuccessCoupons = couponApplied.getSuccessallcouponsinfo();
 
-		List<String> keyCodeList = ConvertUtil.extractCodesFromAppliedCoupons(userAppliedSuccessCouponsList);
+		List<String> keyCodeList = ConvertUtil.extractCodesFromUserAppliedCoupons(userAppliedSuccessCoupons);
 		int appliedCodeCounter = ConvertUtil.getAppliedCodeCount(keyCodeList, code);
 
 		if (keyCodeList.contains(code.toUpperCase())) {
 			response.put(AppConstant.STATUS, errorStatus);
-			response.put(AppConstant.MESSAGE, "coupon is already used");
-			LOGGER.error("coupon is already used");
+			response.put(AppConstant.MESSAGE, "coupon is already used by user");
+			LOGGER.error("coupon is already used by user");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 		}
 
-		if (appliedCodeCounter >= coupon.getCouponUseTime()) {
+		if (appliedCodeCounter >= coupon.getUsetime()) {
 			response.put(AppConstant.STATUS, errorStatus);
-			response.put(AppConstant.MESSAGE, "coupon already used max times");
-			LOGGER.error("coupon already used max times");
+			response.put(AppConstant.MESSAGE, "coupon already used max times by user");
+			LOGGER.error("coupon already used max times by user");
 			return new ResponseEntity<String>(response.toString(), HttpStatus.BAD_REQUEST);
 		}
 
 		response.put(AppConstant.STATUS, successStatus);
-		response.put(AppConstant.MESSAGE, "coupon can be applied");
-		LOGGER.info("coupon can be applied");
+		response.put(AppConstant.MESSAGE, "this coupon can be applied");
+		LOGGER.info("this coupon can be applied");
 		return new ResponseEntity<String>(response.toString(), HttpStatus.OK);
+	}
+
+	// call below method from a thread
+	private boolean applyAndSaveCouponInfoForUser(AddMoneyRequest addMoneyRequest) {
+		LOGGER.info("Entered applyAndSaveCouponInfoForUser() -> Start");
+		boolean codeRemark = false;
+
+		try {
+			// code, username, amount, category:wallet, web/app,
+			// Step1: call coupon check eligibility and save status in a variable
+
+			String code = addMoneyRequest.getCode();
+			String username = addMoneyRequest.getUsername();
+			//int amount = addMoneyRequest.getAmount();
+			String category = addMoneyRequest.getCategory();
+			String mode = addMoneyRequest.getMode();
+			//String orderid = addMoneyRequest.getOrderid();
+
+			// code1=datetime1,web,orderid1#code2=datetime2,web,orderid2#...etc
+			//String successCouponText = code + "=" + new Date() + "," + mode + "," + orderid;
+			String successCouponText = code + "=" + new Date() + "," + mode;
+
+			CouponAppliedUser cpApplied = couponAppliedRepo.findByUsername(username);
+			if (null == cpApplied) {
+				cpApplied = new CouponAppliedUser();
+				cpApplied.setUsername(username);
+				cpApplied.setSuccessallcouponsinfo(successCouponText);
+			} else {
+				String successCodeInfo = cpApplied.getSuccessallcouponsinfo();
+				successCouponText = successCodeInfo + "#" + successCouponText;
+				cpApplied.setSuccessallcouponsinfo(successCouponText);
+				cpApplied.setId(cpApplied.getId());
+			}
+			couponAppliedRepo.save(cpApplied);
+		} catch (Exception e) {
+			LOGGER.error("Error is->" + e.getMessage());
+		}
+		return codeRemark;
+	}
+
+	// after above method
+	// set cashback
+	private void setOrProcessCashback(String username, String code) {
+		LOGGER.info("Entered setOrProcessCashback() -> Start");
+
+		couponsrepo.findByCode(code.toUpperCase());
+
+		// deposit instant cashback to user wallet
 	}
 
 }

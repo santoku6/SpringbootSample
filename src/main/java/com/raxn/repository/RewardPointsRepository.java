@@ -8,7 +8,7 @@ import com.raxn.entity.RewardPoints;
 
 public interface RewardPointsRepository extends JpaRepository<RewardPoints, Integer>{
 	
-	List<RewardPoints> findFirst20ByUseridOrderByDateTimeDesc(String userid);
+	List<RewardPoints> findFirst20ByUsernameOrderByDateTimeDesc(String username);
 	
 	
 

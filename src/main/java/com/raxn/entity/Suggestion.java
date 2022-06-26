@@ -38,31 +38,33 @@ public class Suggestion implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
+	private String username;// either a userid(registered user) or anonymous(unregistered user)
+
 	@NotBlank
 	private String name;
-	
+
 	@NotBlank
 	private String mobile;
-	
+
 	@NotBlank
 	private String email;
-	
+
 	@NotBlank
 	private String refno;
-	
+
 	@NotBlank
 	private String messageType;
-	
+
 	@NotBlank
 	private String message;
 	private String status;
 	private String comments;
 	private String attachment;
-	
+
 	@NotBlank
 	private String mode;
-	
+
 	@Column(nullable = false, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreatedDate
@@ -168,13 +170,21 @@ public class Suggestion implements Serializable {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
+
 	public String getRefno() {
 		return refno;
 	}
 
 	public void setRefno(String refno) {
 		this.refno = refno;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	/*

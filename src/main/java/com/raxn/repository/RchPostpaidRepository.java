@@ -12,7 +12,7 @@ public interface RchPostpaidRepository extends JpaRepository<RchPostpaid, Intege
 
 	List<RchPostpaid> findByUserid(String userid);
 
-	@Query("FROM RchPostpaid WHERE userid is ?1 AND dateTime between ?2 And ?3")
-	List<RchPostpaid> findByDateTime(String userid, Date pastDate, Date currentDate);
+	@Query("FROM RchPostpaid WHERE username is ?1 AND dateTime between ?2 And ?3")
+	List<RchPostpaid> findByDateTime(String username, Date pastDate, Date currentDate);
 
 }

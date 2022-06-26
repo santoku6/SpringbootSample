@@ -12,7 +12,7 @@ public interface RchGasAndCylinderRepository extends JpaRepository<RchGasAndCyli
 
 	List<RchGasAndCylinder> findByUserid(String userid);
 
-	@Query("FROM RchGasAndCylinder WHERE userid is ?1 AND dateTime between ?2 And ?3")
-	List<RchGasAndCylinder> findByDateTime(String userid, Date pastDate, Date currentDate);
+	@Query("FROM RchGasAndCylinder WHERE username is ?1 AND dateTime between ?2 And ?3")
+	List<RchGasAndCylinder> findByDateTime(String username, Date pastDate, Date currentDate);
 
 }

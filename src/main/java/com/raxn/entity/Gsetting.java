@@ -1,24 +1,16 @@
 package com.raxn.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
 
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -26,33 +18,34 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="general_settings")
+@Table(name = "general_settings")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
-public class Gsetting implements Serializable{
+public class Gsetting implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@NotBlank
-	@Column(unique=true)
-	private String name;
-	
-	@NotBlank
-	private String value;
-	
-	@Column(nullable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    @CreatedDate
-    private Date createdAt;
 
-    @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    @LastModifiedDate
-    private Date updatedAt;
+	private String mobile;
+	private String email;
+	private String whatsapp;
+	private String address;
+
+	private String aboutus;
+	private String chooseus;
+	private String ourmission;
+	private String ourvision;
+
+	@Lob
+	private String privacypolicy;
+	@Lob
+	private String tnc;
+	@Lob
+	private String refundpolicy;
+
+	private String noticebar;
 
 	public int getId() {
 		return id;
@@ -62,20 +55,100 @@ public class Gsetting implements Serializable{
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getMobile() {
+		return mobile;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 
-	public String getValue() {
-		return value;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getWhatsapp() {
+		return whatsapp;
+	}
+
+	public void setWhatsapp(String whatsapp) {
+		this.whatsapp = whatsapp;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getAboutus() {
+		return aboutus;
+	}
+
+	public void setAboutus(String aboutus) {
+		this.aboutus = aboutus;
+	}
+
+	public String getChooseus() {
+		return chooseus;
+	}
+
+	public void setChooseus(String chooseus) {
+		this.chooseus = chooseus;
+	}
+
+	public String getOurmission() {
+		return ourmission;
+	}
+
+	public void setOurmission(String ourmission) {
+		this.ourmission = ourmission;
+	}
+
+	public String getPrivacypolicy() {
+		return privacypolicy;
+	}
+
+	public void setPrivacypolicy(String privacypolicy) {
+		this.privacypolicy = privacypolicy;
+	}
+
+	public String getTnc() {
+		return tnc;
+	}
+
+	public void setTnc(String tnc) {
+		this.tnc = tnc;
+	}
+
+	public String getRefundpolicy() {
+		return refundpolicy;
+	}
+
+	public void setRefundpolicy(String refundpolicy) {
+		this.refundpolicy = refundpolicy;
+	}
+
+	public String getNoticebar() {
+		return noticebar;
+	}
+
+	public void setNoticebar(String noticebar) {
+		this.noticebar = noticebar;
+	}
+
+	public String getOurvision() {
+		return ourvision;
+	}
+
+	public void setOurvision(String ourvision) {
+		this.ourvision = ourvision;
 	}
 
 }

@@ -1,104 +1,158 @@
 package com.raxn.request.model;
 
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 public class CouponsDisplay {
-	
-	private int id;	
-	private String code;  //coupon code
-	private String couponCategory;//wallet,recharge/dth,bills,giftcards
-	private int instantCashbackWebMode;//instant cashback(amount) for web mode after coupon apply
-	private int instantCashbackAppMode;//instant cashback(amount) for app mode after coupon apply
-	private int percentCashbackWebMode;//cashback(web mode) in percent when coupon type is percent
-	private int percentCashbackAppMode;//cashback(app mode) in percent when coupon type is percent
-	private int couponUseTime;//number of times a user can apply any coupon
-	private String couponDescription;//coupon description/title
-	private String termsAndConditions;//coupon terms & condition
-	private String recurringCashbackWebMode;//cashback(in web mode) breakup for entire duration
-	private String recurringCashbackAppMode;//cashback(in app mode) breakup for entire duration
-	private int maxCashbackAmountWebMode;//max cashback(in web mode) if coupon is percent type
-	private int maxCashbackAmountAppMode;//max cashback(in app mode) if coupon is percent type
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
+	private String code; // coupon code
+
+	private String category;// wallet,recharge/dth,bills,giftcards
+
+	@JsonInclude(Include.NON_NULL)
+	private Integer instantCashbackWebMode;// instant cashback(amount) for web mode after coupon apply
+
+	@JsonInclude(Include.NON_NULL)
+	private Integer instantCashbackAppMode;// instant cashback(amount) for app mode after coupon apply
+
+	@JsonInclude(Include.NON_NULL)
+	private Integer percentCashbackWebMode;// cashback(web mode) in percent when coupon type is percent
+
+	@JsonInclude(Include.NON_NULL)
+	private Integer percentCashbackAppMode;// cashback(app mode) in percent when coupon type is percent
+
+	private int usetime;// number of times a user can apply any coupon
+
+	private String description;// coupon description/title
+
+	private String tnc;// coupon terms & condition
+
+	@JsonInclude(Include.NON_NULL)
+	private String recurringCashbackWebMode;// cashback(in web mode) breakup for entire duration
+
+	@JsonInclude(Include.NON_NULL)
+	private String recurringCashbackAppMode;// cashback(in app mode) breakup for entire duration
+
+	@JsonInclude(Include.NON_NULL)
+	private Integer maxCashbackAmountWebMode;// max cashback(in web mode) if coupon is percent type
+
+	@JsonInclude(Include.NON_NULL)
+	private Integer maxCashbackAmountAppMode;// max cashback(in app mode) if coupon is percent type
+
+	private LocalDate endDate;
+
 	public String getCode() {
 		return code;
 	}
+
 	public void setCode(String code) {
 		this.code = code;
 	}
-	public String getCouponCategory() {
-		return couponCategory;
+
+	public String getCategory() {
+		return category;
 	}
-	public void setCouponCategory(String couponCategory) {
-		this.couponCategory = couponCategory;
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
-	public int getInstantCashbackWebMode() {
+
+	public Integer getInstantCashbackWebMode() {
 		return instantCashbackWebMode;
 	}
-	public void setInstantCashbackWebMode(int instantCashbackWebMode) {
+
+	public void setInstantCashbackWebMode(Integer instantCashbackWebMode) {
 		this.instantCashbackWebMode = instantCashbackWebMode;
 	}
-	public int getInstantCashbackAppMode() {
+
+	public Integer getInstantCashbackAppMode() {
 		return instantCashbackAppMode;
 	}
-	public void setInstantCashbackAppMode(int instantCashbackAppMode) {
+
+	public void setInstantCashbackAppMode(Integer instantCashbackAppMode) {
 		this.instantCashbackAppMode = instantCashbackAppMode;
 	}
-	public int getPercentCashbackWebMode() {
+
+	public Integer getPercentCashbackWebMode() {
 		return percentCashbackWebMode;
 	}
-	public void setPercentCashbackWebMode(int percentCashbackWebMode) {
+
+	public void setPercentCashbackWebMode(Integer percentCashbackWebMode) {
 		this.percentCashbackWebMode = percentCashbackWebMode;
 	}
-	public int getPercentCashbackAppMode() {
+
+	public Integer getPercentCashbackAppMode() {
 		return percentCashbackAppMode;
 	}
-	public void setPercentCashbackAppMode(int percentCashbackAppMode) {
+
+	public void setPercentCashbackAppMode(Integer percentCashbackAppMode) {
 		this.percentCashbackAppMode = percentCashbackAppMode;
 	}
-	public int getCouponUseTime() {
-		return couponUseTime;
+
+	public int getUsetime() {
+		return usetime;
 	}
-	public void setCouponUseTime(int couponUseTime) {
-		this.couponUseTime = couponUseTime;
+
+	public void setUsetime(int usetime) {
+		this.usetime = usetime;
 	}
-	public String getCouponDescription() {
-		return couponDescription;
+
+	public String getDescription() {
+		return description;
 	}
-	public void setCouponDescription(String couponDescription) {
-		this.couponDescription = couponDescription;
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	public String getTermsAndConditions() {
-		return termsAndConditions;
+
+	public String getTnc() {
+		return tnc;
 	}
-	public void setTermsAndConditions(String termsAndConditions) {
-		this.termsAndConditions = termsAndConditions;
+
+	public void setTnc(String tnc) {
+		this.tnc = tnc;
 	}
+
 	public String getRecurringCashbackWebMode() {
 		return recurringCashbackWebMode;
 	}
+
 	public void setRecurringCashbackWebMode(String recurringCashbackWebMode) {
 		this.recurringCashbackWebMode = recurringCashbackWebMode;
 	}
+
 	public String getRecurringCashbackAppMode() {
 		return recurringCashbackAppMode;
 	}
+
 	public void setRecurringCashbackAppMode(String recurringCashbackAppMode) {
 		this.recurringCashbackAppMode = recurringCashbackAppMode;
 	}
-	public int getMaxCashbackAmountWebMode() {
+
+	public Integer getMaxCashbackAmountWebMode() {
 		return maxCashbackAmountWebMode;
 	}
-	public void setMaxCashbackAmountWebMode(int maxCashbackAmountWebMode) {
+
+	public void setMaxCashbackAmountWebMode(Integer maxCashbackAmountWebMode) {
 		this.maxCashbackAmountWebMode = maxCashbackAmountWebMode;
 	}
-	public int getMaxCashbackAmountAppMode() {
+
+	public Integer getMaxCashbackAmountAppMode() {
 		return maxCashbackAmountAppMode;
 	}
-	public void setMaxCashbackAmountAppMode(int maxCashbackAmountAppMode) {
+
+	public void setMaxCashbackAmountAppMode(Integer maxCashbackAmountAppMode) {
 		this.maxCashbackAmountAppMode = maxCashbackAmountAppMode;
+	}
+
+	public LocalDate getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
 	}
 
 }

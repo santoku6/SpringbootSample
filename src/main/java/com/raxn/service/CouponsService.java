@@ -11,10 +11,11 @@ public interface CouponsService {
 	
 	ResponseEntity<String> getCouponsByCode(String code) throws JsonProcessingException;
 	
-	ResponseEntity<String> getAllCouponsOffers() throws JsonProcessingException;
+	//ResponseEntity<String> getAllCouponsOffers() throws JsonProcessingException;
 	
 	ResponseEntity<String> getCouponsOffersByCategory(String category) throws JsonProcessingException;
 	
 	ResponseEntity<String> checkCouponEligibility(CouponCheckRequest ccRequest) throws JsonProcessingException;
+	
 
 }

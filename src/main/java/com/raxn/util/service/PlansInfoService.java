@@ -44,7 +44,7 @@ public class PlansInfoService {
 			LOGGER.info("json_response msg = " + json_response);
 			uc.disconnect();
 		} catch (IOException e) {
-			LOGGER.error("IOException :: -> " + e.getMessage(), e);
+			LOGGER.error("IOException :: -> " + e.getMessage());
 		}
 		LOGGER.info("Exiting findOperator()");
 		return json_response;
@@ -71,10 +71,10 @@ public class PlansInfoService {
 				json_response += text;
 			}
 
-			LOGGER.info("json_response msg = " + json_response);
+			//LOGGER.info("json_response msg = " + json_response);
 			uc.disconnect();
 		} catch (IOException e) {
-			LOGGER.error("IOException :: -> " + e.getMessage(), e);
+			LOGGER.error("IOException :: -> " + e.getMessage());
 		}
 		LOGGER.info("Exiting mobilePlans()");
 		return json_response;
